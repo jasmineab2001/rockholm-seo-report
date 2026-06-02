@@ -950,55 +950,6 @@
   </div>
 </div>
 
-<!-- PRIORITY ORDER -->
-<h2 style="font-size:18px;font-weight:700;margin:32px 0 16px;font-family:Inter,sans-serif;display:flex;align-items:center;gap:10px"><span style="background:#fef9c3;width:36px;height:36px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;font-size:16px">📌</span> Top 20 Priority Execution Order</h2>
-
-<div style="background:white;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06);margin-bottom:32px;font-family:Inter,sans-serif">
-<table style="width:100%;border-collapse:collapse">
-<thead><tr style="background:#f8f9f8">
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">#</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">Action</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">Keyword / Page</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">Lang</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">Vol</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">KD</th>
-  <th style="padding:11px 16px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;border-bottom:1px solid #eee">Why First</th>
-</tr></thead>
-<tbody>
-''' + "".join([f'''<tr style="border-bottom:1px solid #f3f3f3">
-  <td style="padding:12px 16px"><div style="width:28px;height:28px;background:#f0f7f3;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1a4a30">{r[0]}</div></td>
-  <td style="padding:12px 16px"><span style="display:inline-flex;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;background:{r[1][0]};color:{r[1][1]}">{r[2]}</span></td>
-  <td style="padding:12px 16px;font-weight:600;font-size:13px">{r[3]}</td>
-  <td style="padding:12px 16px"><span style="display:inline-flex;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:700;background:{r[4][0]};color:{r[4][1]}">{r[5]}</span></td>
-  <td style="padding:12px 16px;font-weight:600">{r[6]}</td>
-  <td style="padding:12px 16px"><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:50%;background:{r[7]};flex-shrink:0"></span><strong>{r[8]}</strong></span></td>
-  <td style="padding:12px 16px;font-size:12.5px;color:#555">{r[9]}</td>
-</tr>''' for r in [
-  (1, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "Fix meditation blog title + FAQ schema", ("#dbeafe","#1d4ed8"), "EN", 170, "#22c55e", 15, "Already pos 6 — title fix alone pushes Top 3"),
-  (2, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "ayurveda kur kerala — new DE page", ("#f3e8ff","#7c3aed"), "DE", 90, "#22c55e", 7, "Lowest KD on entire list"),
-  (3, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "ayurveda kerala resort — new DE page", ("#f3e8ff","#7c3aed"), "DE", 170, "#22c55e", 9, "KD 9 transactional — fastest DE revenue page"),
-  (4, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "Ayurvedic massage in Trivandrum — new EN page", ("#dbeafe","#1d4ed8"), "EN", 880, "#22c55e", 11, "Highest EN volume at lowest KD"),
-  (5, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "Rework shirodhara behandlung DE blog", ("#f3e8ff","#7c3aed"), "DE", 20, "#22c55e", 10, "Blog exists at pos 10 — optimize to Top 3"),
-  (6, ("#ccfbf1","#0f766e"), "⚡ Quick Win", "Update /prices/ with package table", ("#dbeafe","#1d4ed8"), "EN", 260, "#22c55e", 9, "Already 125 clicks — expand to capture more"),
-  (7, ("#fee2e2","#b91c1c"), "🔴 Urgent", "Recover /rockholm-ayurveda-center-resort/", ("#dbeafe","#1d4ed8"), "EN", "1,000", "#ef4444", 49, "High volume, dropped — direct revenue impact"),
-  (8, ("#fee2e2","#b91c1c"), "🔴 Urgent", "Recover /ayurveda-retreat-in-kovalam/", ("#dbeafe","#1d4ed8"), "EN", "1,000", "#ef4444", 55, "High volume, dropped — same recovery batch"),
-  (9, ("#fee2e2","#b91c1c"), "🔴 Urgent", "Recover /wellness-retreat-kovalam/", ("#dbeafe","#1d4ed8"), "EN", 480, "#ef4444", 42, "Pos 32 — effectively invisible"),
-  (10, ("#fee2e2","#b91c1c"), "🔴 Urgent", "Recover /kerala-ayurveda-resort/", ("#dbeafe","#1d4ed8"), "EN", 210, "#ef4444", 43, "Dropped — consolidate with center-resort page"),
-  (11, ("#dbeafe","#1d4ed8"), "🆕 New Page", "ayurveda indien kur — new DE page", ("#f3e8ff","#7c3aed"), "DE", 480, "#22c55e", 10, "High DE volume, very low KD"),
-  (12, ("#dbeafe","#1d4ed8"), "🆕 New Page", "kovalam beach indien — new DE page", ("#f3e8ff","#7c3aed"), "DE", 210, "#22c55e", 10, "Rockholm exclusive — zero DE competition"),
-  (13, ("#fef3c7","#92400e"), "🔧 Rework", "Rework /ayurvedic-massage-therapy-packages-kerala/", ("#dbeafe","#1d4ed8"), "EN", "3,600", "#f59e0b", 19, "Highest volume keyword — title + content fix"),
-  (14, ("#dbeafe","#1d4ed8"), "🆕 New Page", "ayurveda kur — main DE pillar page", ("#f3e8ff","#7c3aed"), "DE", 590, "#f59e0b", 27, "Main DE anchor — all DE pages link here"),
-  (15, ("#fef3c7","#92400e"), "🔧 Rework", "Expand /panchakarma-treatment-kovalam/", ("#dbeafe","#1d4ed8"), "EN", 720, "#f59e0b", 24, "720 vol, already pos 9 — pillar pushes Top 3"),
-  (16, ("#fef3c7","#92400e"), "🔧 Rework", "Expand /de/panchakarma-behandlung-kovalam/", ("#f3e8ff","#7c3aed"), "DE", 590, "#f59e0b", 18, "DE panchakarma hub — feeds all DE treatment keywords"),
-  (17, ("#dcfce7","#065f46"), "✍️ New Blog", "Rewrite /blogs/panchakarma.html as pillar", ("#dbeafe","#1d4ed8"), "EN", "1,300", "#f59e0b", 33, "1,300 vol definitive guide feeds commercial pages"),
-  (18, ("#dcfce7","#065f46"), "✍️ New Blog", "Expand /blogs/ayurveda-doshas-role-in-life/", ("#dbeafe","#1d4ed8"), "EN", "1,600", "#f59e0b", 34, "Highest volume blog keyword"),
-  (19, ("#dcfce7","#065f46"), "✍️ New Blog", "Write abhyanga massage DE blog", ("#f3e8ff","#7c3aed"), "DE", "1,000", "#f59e0b", 24, "1,000 DE volume — links to treatment pages"),
-  (20, ("#dcfce7","#065f46"), "✍️ New Blog", "Write best wellness retreats India blog", ("#dbeafe","#1d4ed8"), "EN", 720, "#f59e0b", 25, "720 vol listicle — Rockholm featured as #1 pick"),
-]]) + '''
-</tbody>
-</table>
-</div>
-
 </div>
 </body>
 </html>
