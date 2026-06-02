@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rockholm — Keyword & Content Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', sans-serif; background: #f0f2f0; color: #1a1a1a; font-size: 14px; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0d2b1e 0%, #1a4a30 50%, #0d2b1e 100%);
+    padding: 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 50%;
+  }
+  .header-tag { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #7ecfa0; margin-bottom: 12px; }
+  .header h1 { font-size: 32px; font-weight: 800; margin-bottom: 6px; }
+  .header p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+  .header-stats { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hstat {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 14px 22px;
+    text-align: center;
+    min-width: 110px;
+  }
+  .hstat .n { font-size: 28px; font-weight: 800; color: #7ecfa0; line-height: 1; }
+  .hstat .l { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 5px; letter-spacing: 0.5px; }
+
+  /* CONTAINER */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 36px 32px; }
+
+  /* SECTION HEADERS */
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 40px 0 18px;
+  }
+  .sec-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .sec-head h2 { font-size: 18px; font-weight: 700; }
+  .sec-head .cnt {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* CARDS */
+  .card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 10px;
+  }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #f8f9f8; }
+  thead th {
+    padding: 11px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #888;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-bottom: 1px solid #f3f3f3;
+    vertical-align: middle;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: #fafdf9; }
+
+  /* BADGES */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .b-en   { background: #dbeafe; color: #1d4ed8; }
+  .b-de   { background: #f3e8ff; color: #7c3aed; }
+  .b-red  { background: #fee2e2; color: #b91c1c; }
+  .b-amb  { background: #fef3c7; color: #92400e; }
+  .b-grn  { background: #d1fae5; color: #065f46; }
+  .b-gray { background: #f3f4f6; color: #374151; }
+  .b-teal { background: #ccfbf1; color: #0f766e; }
+
+  /* KD DOT */
+  .kd-wrap { display: flex; align-items: center; gap: 7px; }
+  .kd-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .kd-low  { background: #22c55e; }
+  .kd-med  { background: #f59e0b; }
+  .kd-high { background: #ef4444; }
+  .kd-num { font-weight: 700; font-size: 13px; }
+
+  /* VOL BAR */
+  .vol-cell { display: flex; align-items: center; gap: 8px; }
+  .vol-bar-wrap { width: 60px; height: 5px; background: #eee; border-radius: 3px; overflow: hidden; }
+  .vol-bar { height: 100%; border-radius: 3px; background: #1a4a30; }
+  .vol-num { font-weight: 600; font-size: 13px; min-width: 36px; }
+
+  /* URL */
+  .url { font-family: monospace; font-size: 11.5px; color: #1a4a30; background: #f0f7f3; padding: 3px 8px; border-radius: 4px; }
+
+  /* PRIORITY */
+  .p-urgent { color: #b91c1c; font-weight: 700; }
+  .p-high   { color: #92400e; font-weight: 700; }
+  .p-med    { color: #065f46; font-weight: 600; }
+  .p-qw     { color: #0f766e; font-weight: 700; }
+
+  /* SECTION COLORS */
+  .color-newpage  { background: #eff6ff; }
+  .color-rework   { background: #fffbeb; }
+  .color-newblog  { background: #f0fdf4; }
+  .color-reworkblog { background: #fdf4ff; }
+  .color-defend   { background: #f0fdf4; }
+
+  .icon-newpage   { background: #dbeafe; }
+  .icon-rework    { background: #fef3c7; }
+  .icon-newblog   { background: #dcfce7; }
+  .icon-reworkblog{ background: #f3e8ff; }
+  .icon-defend    { background: #d1fae5; }
+
+  .cnt-newpage    { background: #dbeafe; color: #1d4ed8; }
+  .cnt-rework     { background: #fef3c7; color: #92400e; }
+  .cnt-newblog    { background: #dcfce7; color: #065f46; }
+  .cnt-reworkblog { background: #f3e8ff; color: #7c3aed; }
+  .cnt-defend     { background: #d1fae5; color: #065f46; }
+
+  /* MERGED KEYWORDS */
+  .kw-group { display: flex; flex-direction: column; gap: 4px; }
+  .kw-main { font-weight: 600; font-size: 13px; }
+  .kw-also { font-size: 11.5px; color: #888; }
+
+  /* NOTE */
+  .note { font-size: 11.5px; color: #888; margin-top: 2px; }
+  .note-red { color: #b91c1c; font-weight: 600; }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 32px; color: #aaa; font-size: 12px; }
+  .footer strong { color: #555; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #e8e8e8; margin: 8px 0; }
+
+  @media(max-width:768px) {
+    .wrap { padding: 20px 16px; }
+    .header { padding: 28px 20px; }
+    .header-stats { gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-tag">Gilead Digital · SEO Strategy · June 2026</div>
+  <h1>Rockholm — Keyword & Content Plan</h1>
+  <p>Kovalam, Kerala · English + German · 58 Priority Keywords Mapped</p>
+  <div class="header-stats">
+    <div class="hstat"><div class="n">58</div><div class="l">Total Keywords</div></div>
+    <div class="hstat"><div class="n">11</div><div class="l">New Pages</div></div>
+    <div class="hstat"><div class="n">15</div><div class="l">Rework Pages</div></div>
+    <div class="hstat"><div class="n">8</div><div class="l">New Blogs</div></div>
+    <div class="hstat"><div class="n">4</div><div class="l">Rework Blogs</div></div>
+    <div class="hstat"><div class="n">3</div><div class="l">Defend</div></div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════ -->
+<!-- 1. NEW PAGES                       -->
+<!-- ══════════════════════════════════ -->
+<div class="sec-head">
+  <div class="sec-icon icon-newpage">🆕</div>
+  <div>
+    <h2>New Pages to Create</h2>
+    <div style="font-size:12px;color:#888;margin-top:2px">No existing page · Build from scratch</div>
+  </div>
+  <div class="cnt cnt-newpage">11 Pages</div>
+</div>
+
+<div class="card">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Keyword(s)</th>
+      <th>Lang</th>
+      <th>Volume</th>
+      <th>KD</th>
+      <th>Intent</th>
+      <th>Target URL</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><div class="kw-group"><div class="kw-main">Ayurvedic massage in Trivandrum</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:25%"></div></div><span class="vol-num">880</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">11</span></div></td>
+      <td>Commercial</td>
+      <td><span class="url">/ayurvedic-massage-trivandrum/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda indien kur</div><div class="kw-also">+ ayurveda kur indien &nbsp;·&nbsp; indien ayurveda kur</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:37%"></div></div><span class="vol-num">480</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/ayurveda-kur-indien/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda kuren</div><div class="kw-also">+ ayurvedakur</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:20%"></div></div><span class="vol-num">590</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">27</span></div></td>
+      <td>Commercial</td>
+      <td><span class="url">/de/ayurveda-kur/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda kerala resort</div><div class="kw-also">+ ayurveda resort kerala</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:12%"></div></div><span class="vol-num">170</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">9</span></div></td>
+      <td>Transactional</td>
+      <td><span class="url">/de/ayurveda-kerala-resort/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><div class="kw-group"><div class="kw-main">kovalam beach indien</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:15%"></div></div><span class="vol-num">210</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/kovalam-beach-indien/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><div class="kw-group"><div class="kw-main">Kovalam Ayurveda resort</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:22%"></div></div><span class="vol-num">320</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">31</span></div></td>
+      <td>Transactional</td>
+      <td><span class="url">/kovalam-ayurveda-resort/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda urlaub</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:18%"></div></div><span class="vol-num">260</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">30</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/ayurveda-urlaub/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda kur kerala</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:7%"></div></div><span class="vol-num">90</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">7</span></div></td>
+      <td>Transactional</td>
+      <td><span class="url">/de/ayurveda-kur-kerala/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda wellness urlaub</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:3%"></div></div><span class="vol-num">30</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">14</span></div></td>
+      <td>Transactional</td>
+      <td><span class="url">/de/ayurveda-wellness-urlaub/</span></td>
+      <td><span class="p-med">🟢 Medium</span></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda urlaub indien</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:3%"></div></div><span class="vol-num">30</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">8</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/ayurveda-urlaub-indien/</span></td>
+      <td><span class="p-med">🟢 Medium</span></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><div class="kw-group"><div class="kw-main">Abhyanga massage Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:2%"></div></div><span class="vol-num">20</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">8</span></div></td>
+      <td>Transactional</td>
+      <td><span class="url">/abhyanga-massage-kerala/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ══════════════════════════════════ -->
+<!-- 2. REWORK EXISTING PAGES           -->
+<!-- ══════════════════════════════════ -->
+<div class="sec-head">
+  <div class="sec-icon icon-rework">🔧</div>
+  <div>
+    <h2>Rework Existing Pages</h2>
+    <div style="font-size:12px;color:#888;margin-top:2px">Page exists · Needs optimization or recovery</div>
+  </div>
+  <div class="cnt cnt-rework">15 Pages</div>
+</div>
+
+<div class="card">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Existing Page</th>
+      <th>Target Keyword(s)</th>
+      <th>Lang</th>
+      <th>Vol</th>
+      <th>KD</th>
+      <th>Current Status</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><span class="url">/ayurvedic-massage-therapy-packages-kerala/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurvedic massage in Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>3,600</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">19</span></div></td>
+      <td><span class="note">Page exists · pos ~11 · low CTR</span></td>
+      <td><span class="p-urgent">🔴 Urgent</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><span class="url">/rockholm-ayurveda-center-resort/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurvedic retreat Kerala</div><div class="kw-also">+ Luxury ayurvedic resort Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>1,000</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">49</span></div></td>
+      <td><span class="note note-red">Dropped · pos ~27 · RECOVER</span></td>
+      <td><span class="p-urgent">🔴 Urgent</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><span class="url">/ayurveda-retreat-in-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurveda retreat Kerala</div><div class="kw-also">+ Kovalam beach retreat</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>1,000</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">55</span></div></td>
+      <td><span class="note note-red">Dropped · pos ~36 · RECOVER</span></td>
+      <td><span class="p-urgent">🔴 Urgent</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><span class="url">/panchakarma-treatment-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Panchakarma Kerala</div><div class="kw-also">+ Kerala Panchakarma treatment</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>720</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">24</span></div></td>
+      <td><span class="note">Exists · pos ~9 · thin content</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><span class="url">/wellness-retreat-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Wellness retreat in Kerala</div><div class="kw-also">+ Ayurveda Wellness retreat</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>480</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">42</span></div></td>
+      <td><span class="note note-red">Dropped · pos ~32 · RECOVER</span></td>
+      <td><span class="p-urgent">🔴 Urgent</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><span class="url">/yoga-meditation-retreat-in-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Yoga retreat Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>390</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">23</span></div></td>
+      <td><span class="note">Exists · pos ~9 · needs content expansion</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><span class="url">/de/panchakarma-behandlung-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">panchakarma</div><div class="kw-also">+ panchakarma kur + kur indien + panchakarma indien</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td>590</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">18</span></div></td>
+      <td><span class="note">Exists · pos ~16 · thin · expand to pillar</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><span class="url">/prices/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurveda package rates</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>260</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">9</span></div></td>
+      <td><span class="note">125 clicks · pos 3.81 · add package table</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><span class="url">/beach-view-resort-tvm/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurvedic resorts in Trivandrum</div><div class="kw-also">+ Beach resorts near Trivandrum</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>260</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">23</span></div></td>
+      <td><span class="note">Exists · pos ~16 · needs geo optimization</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><span class="url">/kerala-ayurveda-resort/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Kerala Ayurveda resort</div><div class="kw-also">+ Ayurveda resorts in Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>210</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">43</span></div></td>
+      <td><span class="note note-red">Dropped · pos ~27 · RECOVER</span></td>
+      <td><span class="p-urgent">🔴 Urgent</span></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><span class="url">/de/ayurveda-retreat-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda retreat</div><div class="kw-also">+ kur indien kerala &nbsp;·&nbsp; retreat indien</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td>320</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">12</span></div></td>
+      <td><span class="note">Exists · pos ~15 · expand content</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><span class="url">/de/yoga-und-meditations-retreat-in-kovalam/</span></td>
+      <td><div class="kw-group"><div class="kw-main">yoga retreat indien</div><div class="kw-also">+ ayurveda yoga retreat</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td>110</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td><span class="note">Exists · pos ~13 · optimize title + content</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><span class="url">/ayurveda-packages-in-kerala/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurveda kerala package</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>140</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">24</span></div></td>
+      <td><span class="note">Exists · pos ~25 · low traffic</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><span class="url">/de/</span></td>
+      <td><div class="kw-group"><div class="kw-main">ayurveda kerala</div><div class="kw-also">+ authentisches ayurveda</div></div></td>
+      <td><span class="badge b-de">DE</span></td>
+      <td>260</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">12</span></div></td>
+      <td><span class="note">DE homepage · pos ~10 · needs keyword focus</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><span class="url">/ayurvedic-resort-lighthouse-beach/</span></td>
+      <td><div class="kw-group"><div class="kw-main">Ayurveda beach resort Kerala</div></div></td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>50</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">38</span></div></td>
+      <td><span class="note">Exists · pos ~25 · USP page needs refresh</span></td>
+      <td><span class="p-med">🟢 Medium</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ══════════════════════════════════ -->
+<!-- 3. NEW BLOGS                       -->
+<!-- ══════════════════════════════════ -->
+<div class="sec-head">
+  <div class="sec-icon icon-newblog">✍️</div>
+  <div>
+    <h2>New Blogs to Write</h2>
+    <div style="font-size:12px;color:#888;margin-top:2px">Informational intent · No existing content</div>
+  </div>
+  <div class="cnt cnt-newblog">8 Blogs</div>
+</div>
+
+<div class="card">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Keyword</th>
+      <th>Lang</th>
+      <th>Volume</th>
+      <th>KD</th>
+      <th>Intent</th>
+      <th>Target URL</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="kw-main">Ayurvedic wellness</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:100%"></div></div><span class="vol-num">1,300</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-high"></div><span class="kd-num">45</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/blogs/ayurvedic-wellness/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="kw-main">abhyanga massage</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:77%"></div></div><span class="vol-num">1,000</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">24</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/blogs/abhyanga-massage/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="kw-main">Best wellness retreats in India</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:55%"></div></div><span class="vol-num">720</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">25</span></div></td>
+      <td>Commercial</td>
+      <td><span class="url">/blogs/best-wellness-retreats-india/</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="kw-main">ayurvedic detoxification</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:11%"></div></div><span class="vol-num">140</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">21</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/blogs/ayurvedic-detoxification/</span></td>
+      <td><span class="p-med">🟢 Medium</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="kw-main">ayurveda entgiftung</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:7%"></div></div><span class="vol-num">90</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/blogs/ayurveda-entgiftung/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="kw-main">ayurveda kur erfahrungen</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:2%"></div></div><span class="vol-num">20</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td>Commercial</td>
+      <td><span class="url">/de/blogs/ayurveda-kur-erfahrungen/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td class="kw-main">Ayurveda for stress and anxiety</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:1%"></div></div><span class="vol-num">10</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">22</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/blogs/ayurveda-for-stress-anxiety/</span></td>
+      <td><span class="p-med">🟢 Medium</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="kw-main">ayurveda anti aging</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td><div class="vol-cell"><div class="vol-bar-wrap"><div class="vol-bar" style="width:1%"></div></div><span class="vol-num">10</span></div></td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">6</span></div></td>
+      <td>Informational</td>
+      <td><span class="url">/de/blogs/ayurveda-anti-aging/</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ══════════════════════════════════ -->
+<!-- 4. REWORK EXISTING BLOGS           -->
+<!-- ══════════════════════════════════ -->
+<div class="sec-head">
+  <div class="sec-icon icon-reworkblog">🔄</div>
+  <div>
+    <h2>Rework Existing Blogs</h2>
+    <div style="font-size:12px;color:#888;margin-top:2px">Blog exists but thin, outdated or under-optimized</div>
+  </div>
+  <div class="cnt cnt-reworkblog">4 Blogs</div>
+</div>
+
+<div class="card">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Existing Blog</th>
+      <th>Keyword</th>
+      <th>Lang</th>
+      <th>Vol</th>
+      <th>KD</th>
+      <th>Issue</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><span class="url">/blogs/ayurveda-doshas-role-in-life/</span></td>
+      <td class="kw-main">Ayurveda doshas</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>1,600</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">34</span></div></td>
+      <td><span class="note">Thin · expand to Vata / Pitta / Kapha hub</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><span class="url">/blogs/panchakarma.html</span></td>
+      <td class="kw-main">What is Panchakarma</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>1,300</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">33</span></div></td>
+      <td><span class="note">Very thin · rewrite as 2,500w pillar guide</span></td>
+      <td><span class="p-high">🔶 High</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><span class="url">/blogs/transform-health-meditation-rockholm.html</span></td>
+      <td class="kw-main">Meditation centre in Kerala</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>170</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">15</span></div></td>
+      <td><span class="note">pos 6.33 · fix title tag + add FAQ schema</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><span class="url">/blogs/shirodhara-therapie-ayurveda-kerala.html</span></td>
+      <td class="kw-main">shirodhara behandlung</td>
+      <td><span class="badge b-de">DE</span></td>
+      <td>20</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td><span class="note">DE blog exists · pos ~10 · optimize &amp; expand</span></td>
+      <td><span class="p-qw">⚡ Quick Win</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<!-- ══════════════════════════════════ -->
+<!-- 5. DEFEND                          -->
+<!-- ══════════════════════════════════ -->
+<div class="sec-head">
+  <div class="sec-icon icon-defend">🛡️</div>
+  <div>
+    <h2>Defend</h2>
+    <div style="font-size:12px;color:#888;margin-top:2px">Already ranking well · Maintain with light refreshes</div>
+  </div>
+  <div class="cnt cnt-defend">3 Pages</div>
+</div>
+
+<div class="card">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Keyword</th>
+      <th>Lang</th>
+      <th>Volume</th>
+      <th>KD</th>
+      <th>Page</th>
+      <th>Position</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="kw-main">Niyamas in Yoga</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>590</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">34</span></div></td>
+      <td><span class="url">/blogs/how-the-niyamas-in-yoga-guide.html</span></td>
+      <td><span class="badge b-grn">pos 3.35 · 179 clicks</span></td>
+      <td>Quarterly refresh</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="kw-main">Ayurveda cuisine</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>10</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-low"></div><span class="kd-num">10</span></div></td>
+      <td><span class="url">/ayurveda-cuisine/</span></td>
+      <td><span class="badge b-grn">pos 5.26 · 658 clicks</span></td>
+      <td>Add seasonal recipes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="kw-main">Ayurvedic beach resort Kovalam</td>
+      <td><span class="badge b-en">EN</span></td>
+      <td>20</td>
+      <td><div class="kd-wrap"><div class="kd-dot kd-med"></div><span class="kd-num">28</span></div></td>
+      <td><span class="url">/rockholm-at-the-lighthouse-beach/</span></td>
+      <td><span class="badge b-grn">pos ~4 · 149 clicks</span></td>
+      <td>Maintain &amp; monitor</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">
+  Prepared by <strong>Gilead Digital</strong> &nbsp;·&nbsp; Rockholm at the Lighthouse Beach, Kovalam &nbsp;·&nbsp; June 2026
+</div>
+
+</body>
+</html>
