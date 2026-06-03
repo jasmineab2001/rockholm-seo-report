@@ -3,153 +3,433 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rockholm – Phase 1 SEO Plan | Gilead Digital</title>
+  <title>SEO Content Plan — Rockholm | Gilead Digital</title>
   <style>
+    :root {
+      --navy:   #0f2d5e;
+      --blue:   #1a56a0;
+      --accent: #e2a830;
+      --green:  #16a34a;
+      --red:    #dc2626;
+      --purple: #7c3aed;
+      --orange: #ea580c;
+      --gray:   #6b7280;
+      --light:  #f3f4f6;
+      --border: #e5e7eb;
+      --text:   #111827;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; color: #1a1a2e; font-size: 14px; line-height: 1.6; }
 
-    .header { background: #0f3460; color: #fff; padding: 36px 48px; }
-    .header h1 { font-size: 26px; font-weight: 700; }
-    .header h1 span { color: #e2a830; }
-    .header p { margin-top: 5px; color: rgba(255,255,255,0.65); font-size: 13px; }
+    body {
+      font-family: 'Segoe UI', system-ui, Arial, sans-serif;
+      background: #f0f2f5;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
-    .summary { display: flex; flex-wrap: wrap; gap: 12px; padding: 24px 48px; background: #fff; border-bottom: 1px solid #e5e9f0; }
-    .card { border: 1px solid #e5e9f0; border-radius: 8px; padding: 12px 20px; text-align: center; min-width: 100px; }
-    .card-num { font-size: 28px; font-weight: 700; color: #0f3460; }
-    .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-top: 2px; }
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 40px 56px 36px;
+    }
+    .site-header .brand {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 10px;
+    }
+    .site-header h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+    }
+    .site-header h1 span { color: var(--accent); }
+    .site-header .tagline {
+      margin-top: 6px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+    }
 
-    .main { max-width: 1100px; margin: 0 auto; padding: 36px 24px 64px; }
+    /* ── PAGE WRAP ── */
+    .page { max-width: 980px; margin: 0 auto; padding: 40px 24px 72px; }
 
-    .section { margin-bottom: 48px; }
-    .section-title { font-size: 17px; font-weight: 700; color: #0f3460; border-left: 4px solid #e2a830; padding-left: 12px; margin-bottom: 5px; }
-    .section-note { color: #777; font-size: 13px; margin-bottom: 16px; }
+    /* ── STATS ROW ── */
+    .stats {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 26px;
+      text-align: center;
+      min-width: 110px;
+      flex: 1;
+    }
+    .stat-card .num {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-card .num.green { color: var(--green); }
+    .stat-card .lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      color: var(--gray);
+      margin-top: 5px;
+      font-weight: 600;
+    }
 
-    .info-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; font-size: 13px; color: #78350f; line-height: 1.7; }
-    .info-box b { color: #92400e; }
+    /* ── SECTION TITLE ── */
+    .section-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
 
-    /* GROUP LABEL */
-    .group-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #6b7280; margin: 28px 0 10px; display: flex; align-items: center; gap: 10px; }
-    .group-label::after { content: ''; flex: 1; height: 1px; background: #e5e9f0; }
+    /* ── PROCESS STEPS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+    .step {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 12px;
+      text-align: center;
+    }
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 10px;
+    }
+    .step-icon { font-size: 22px; margin-bottom: 6px; }
+    .step-name { font-size: 12px; font-weight: 700; color: var(--text); }
 
-    /* CLUSTER CARDS */
-    .cluster-grid { display: flex; flex-direction: column; gap: 10px; }
-    .cluster { background: #fff; border: 1px solid #e5e9f0; border-radius: 8px; display: grid; grid-template-columns: 2.4fr 0.6fr 0.6fr 0.6fr 0.7fr 1.4fr 0.8fr; align-items: center; gap: 0; overflow: hidden; }
-    .cluster:hover { border-color: #bfdbfe; }
+    /* ── MONTH BLOCK ── */
+    .month-block {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .month-header {
+      background: var(--navy);
+      color: #fff;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .month-header h3 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .month-header .month-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,.6);
+    }
 
-    .cl-main { padding: 12px 16px; border-right: 1px solid #f0f2f6; }
-    .cl-focus { font-weight: 700; font-size: 13.5px; color: #1a1a2e; }
-    .cl-also { font-size: 11.5px; color: #888; margin-top: 4px; line-height: 1.5; }
-    .cl-also span { display: inline-block; background: #f3f4f6; border-radius: 4px; padding: 1px 6px; margin: 1px 2px 1px 0; }
+    /* ── WEEK ENTRY ── */
+    .entries { padding: 0 22px; }
+    .entry {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .entry:last-child { border-bottom: none; }
 
-    .cl-cell { padding: 12px 14px; border-right: 1px solid #f0f2f6; font-size: 13px; }
-    .cl-cell:last-child { border-right: none; }
-    .cl-num { font-weight: 700; color: #0f3460; }
-    .cl-sub { font-size: 11px; color: #888; }
+    .wk {
+      background: var(--navy);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
 
-    /* KD */
-    .kd-wrap { display: flex; align-items: center; gap: 5px; }
-    .kd-bar { width: 40px; height: 4px; background: #e5e9f0; border-radius: 2px; }
-    .kd-fill { height: 4px; border-radius: 2px; }
-    .easy .kd-fill   { background: #22c55e; }
-    .med  .kd-fill   { background: #f59e0b; }
-    .hard .kd-fill   { background: #ef4444; }
-    .kd-n { font-size: 12px; font-weight: 700; }
+    .entry-body { flex: 1; }
+    .entry-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .entry-url {
+      font-family: 'Consolas', monospace;
+      font-size: 11.5px;
+      color: var(--blue);
+      margin-bottom: 4px;
+    }
+    .entry-kw {
+      font-size: 12.5px;
+      color: var(--gray);
+    }
+    .entry-kw b { color: var(--text); }
+    .also {
+      margin-top: 4px;
+      font-size: 11.5px;
+      color: #9ca3af;
+    }
+    .also span {
+      display: inline-block;
+      background: var(--light);
+      border-radius: 4px;
+      padding: 1px 6px;
+      margin: 2px 2px 0 0;
+      font-size: 11px;
+    }
 
-    /* BADGES */
-    .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; white-space: nowrap; }
-    .b-urgent { background: #fef2f2; color: #b91c1c; }
-    .b-high   { background: #eff6ff; color: #1d4ed8; }
-    .b-med    { background: #f0fdf4; color: #15803d; }
-    .b-qw     { background: #faf5ff; color: #6d28d9; }
-    .b-def    { background: #ecfdf5; color: #065f46; }
-    .b-rw     { background: #fff7ed; color: #c2410c; }
+    .entry-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 5px;
+      flex-shrink: 0;
+      min-width: 130px;
+    }
+    .words {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--navy);
+    }
 
-    /* LANG */
-    .lang { display: inline-block; padding: 2px 7px; border-radius: 8px; font-size: 10px; font-weight: 700; }
-    .en { background: #dbeafe; color: #1e40af; }
-    .de { background: #ffedd5; color: #c2410c; }
+    /* ── BADGES ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+    .b-new    { background: #dcfce7; color: #15803d; }
+    .b-rework { background: #fef3c7; color: #b45309; }
+    .b-blog   { background: #ede9fe; color: #6d28d9; }
+    .b-en     { background: #dbeafe; color: #1e40af; }
+    .b-de     { background: #ffedd5; color: #c2410c; }
+    .b-pillar { background: var(--navy); color: #fbbf24; }
+    .b-qw     { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; }
+    .b-defend { background: #ecfdf5; color: #065f46; }
 
-    /* URL */
-    code { font-family: 'Consolas', monospace; font-size: 11px; background: #f0f4fa; padding: 2px 6px; border-radius: 4px; color: #1d4ed8; word-break: break-all; }
+    /* ── ALSO SECTION (reworks/blogs inside month) ── */
+    .also-section {
+      background: var(--light);
+      border-top: 1px solid var(--border);
+      padding: 14px 22px;
+    }
+    .also-section h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .also-items { display: flex; flex-direction: column; gap: 6px; }
+    .also-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12.5px;
+    }
+    .also-item .ai-url {
+      font-family: 'Consolas', monospace;
+      font-size: 11px;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+    .also-item .ai-kw { color: var(--gray); }
+    .also-item .ai-kw b { color: var(--text); }
 
-    /* SIMPLE TABLE for specs/timeline */
-    .tbl-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid #e5e9f0; }
-    table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13px; }
-    th { background: #0f3460; color: #fff; padding: 9px 14px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; white-space: nowrap; }
-    th:first-child { border-radius: 7px 0 0 0; }
-    th:last-child  { border-radius: 0 7px 0 0; }
-    td { padding: 10px 14px; border-bottom: 1px solid #f0f2f6; vertical-align: middle; }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: #f8fafd; }
-    td:first-child { font-weight: 600; color: #374151; }
+    /* ── DEFEND SECTION ── */
+    .defend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 4px;
+    }
+    .defend-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .defend-check {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .defend-card .dc-url {
+      font-family: 'Consolas', monospace;
+      font-size: 11px;
+      color: var(--blue);
+      margin-bottom: 3px;
+    }
+    .defend-card .dc-kw { font-size: 13px; font-weight: 700; }
+    .defend-card .dc-pos { font-size: 12px; color: var(--gray); }
 
-    /* TIMELINE */
-    .tl-list { display: flex; flex-direction: column; gap: 0; }
-    .tl { display: flex; gap: 16px; padding-bottom: 20px; }
-    .tl:last-child { padding-bottom: 0; }
-    .tl-left { display: flex; flex-direction: column; align-items: center; min-width: 52px; }
-    .tl-dot { width: 44px; height: 44px; border-radius: 50%; background: #0f3460; color: #fff; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.2; flex-shrink: 0; }
-    .tl-line { width: 2px; flex: 1; background: #e5e9f0; margin-top: 4px; }
-    .tl:last-child .tl-line { display: none; }
-    .tl-box { background: #fff; border: 1px solid #e5e9f0; border-radius: 8px; padding: 14px 18px; flex: 1; margin-bottom: 4px; }
-    .tl-box h4 { font-size: 13.5px; font-weight: 700; color: #0f3460; margin-bottom: 8px; }
-    .tl-box ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-    .tl-box li { font-size: 13px; color: #555; padding-left: 14px; position: relative; }
-    .tl-box li::before { content: '·'; position: absolute; left: 0; color: #e2a830; font-weight: 700; }
-    .tl-box li b { color: #1a1a2e; }
+    /* ── DIVIDER ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
 
-    .footer { background: #0f3460; color: rgba(255,255,255,0.6); text-align: center; padding: 22px; font-size: 13px; }
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.6);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
     .footer b { color: #fff; }
 
-    @media (max-width: 768px) {
-      .cluster { grid-template-columns: 1fr; }
-      .cl-cell { border-right: none; border-top: 1px solid #f0f2f6; }
-      .header, .summary { padding-left: 20px; padding-right: 20px; }
+    @media (max-width: 640px) {
+      .site-header { padding: 28px 20px; }
+      .page { padding: 24px 14px 52px; }
+      .entry { flex-direction: column; gap: 8px; }
+      .entry-right { flex-direction: row; align-items: center; }
+      .defend-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <h1><span>Rockholm</span> — Phase 1 SEO Content Plan</h1>
-  <p>Kovalam, Kerala &nbsp;·&nbsp; rockholm.com &nbsp;·&nbsp; English + German &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; Gilead Digital</p>
+<!-- ═══════ HEADER ═══════ -->
+<div class="site-header">
+  <div class="brand">Gilead Digital &nbsp;·&nbsp; SEO Content Plan &nbsp;·&nbsp; June 2026</div>
+  <h1>SEO Content Plan — <span>Rockholm</span></h1>
+  <div class="tagline">Rockholm · Ayurveda Beach Resort, Kovalam, Kerala &nbsp;·&nbsp; rockholm.com &nbsp;·&nbsp; Phase 1 of 2</div>
 </div>
 
-<!-- SUMMARY -->
-<div class="summary">
-  <div class="card"><div class="card-num">75</div><div class="card-label">Keywords</div></div>
-  <div class="card"><div class="card-num">7</div><div class="card-label">New Pages</div></div>
-  <div class="card"><div class="card-num">8</div><div class="card-label">Page Reworks</div></div>
-  <div class="card"><div class="card-num">5</div><div class="card-label">New Blogs</div></div>
-  <div class="card"><div class="card-num">4</div><div class="card-label">Blog Reworks</div></div>
-  <div class="card"><div class="card-num">2</div><div class="card-label">Defend</div></div>
-  <div class="card"><div class="card-num">~5 mo</div><div class="card-label">Timeline</div></div>
-</div>
+<div class="page">
 
-<div class="main">
-
-  <!-- ═══ CLUSTERING LOGIC ═══ -->
-  <div class="section">
-    <div class="section-title">Keyword Clustering Logic</div>
-    <div class="info-box">
-      Keywords with the same <b>topic + intent</b> are grouped into one page. Ranking for the focus keyword pulls rankings for all the others automatically. Example from the data: <b>ayurveda kerala</b> (260) · <b>ayurveda kerala resort</b> (170) · <b>ayurveda resort kerala</b> (110) — all three target one page at <code>/de/ayurveda-kerala-resort/</code> with combined reach of ~540/mo. Every keyword in the Excel is assigned to exactly one cluster below.
+  <!-- ═══════ STATS ═══════ -->
+  <div class="stats">
+    <div class="stat-card">
+      <div class="num">16</div>
+      <div class="lbl">Pages &amp; Reworks</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">9</div>
+      <div class="lbl">Blogs</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">5</div>
+      <div class="lbl">Months</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">1/wk</div>
+      <div class="lbl">Delivery</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">~20K</div>
+      <div class="lbl">New Words</div>
+    </div>
+    <div class="stat-card">
+      <div class="num green">75</div>
+      <div class="lbl">Keywords</div>
     </div>
   </div>
 
-  <!-- ═══ NEW PAGES ═══ -->
-  <div class="section">
-    <div class="section-title">New Pages to Create</div>
-    <div class="section-note">7 pages · 1 per week · sorted by combined cluster volume</div>
+  <!-- ═══════ PROCESS ═══════ -->
+  <div class="section-title">How We Create Each Page</div>
+  <div class="section-sub">Every new page and rework follows the same 7-step process</div>
+  <div class="process-grid">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-icon">🔍</div>
+      <div class="step-name">Keyword Research</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-icon">📊</div>
+      <div class="step-name">Competitor Analysis</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-icon">🎯</div>
+      <div class="step-name">Choose Keywords</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-icon">✍️</div>
+      <div class="step-name">Write Content</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-icon">⚙️</div>
+      <div class="step-name">Optimise &amp; Meta Tags</div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-icon">✅</div>
+      <div class="step-name">Your Approval</div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-icon">🚀</div>
+      <div class="step-name">Page Live</div>
+    </div>
+  </div>
 
-    <div class="group-label">English — 2 New Pages</div>
-    <div class="cluster-grid">
+  <hr class="divider">
 
-      <!-- EN-1 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">resorts in trivandrum</div>
-          <div class="cl-also">
+  <!-- ═══════ SCHEDULE ═══════ -->
+  <div class="section-title">5-Month Content Schedule</div>
+  <div class="section-sub">One page or rework per week · 1–2 blogs per month · sorted by priority</div>
+
+  <!-- ── MONTH 1 ── -->
+  <div class="month-block">
+    <div class="month-header">
+      <div>
+        <h3>Month 1 — High-Volume New Pages</h3>
+        <div class="month-sub">4 new pages · start with the biggest volume opportunities</div>
+      </div>
+      <div class="month-sub" style="text-align:right">WK 1–4</div>
+    </div>
+
+    <div class="entries">
+
+      <div class="entry">
+        <div class="wk">WK 1</div>
+        <div class="entry-body">
+          <div class="entry-title">Resorts in Trivandrum</div>
+          <div class="entry-url">rockholm.com/resorts-in-trivandrum/</div>
+          <div class="entry-kw">Focus: <b>resorts in trivandrum</b> · 6,600/mo · KD 29</div>
+          <div class="also">
             <span>beach resorts in trivandrum</span>
             <span>thiruvananthapuram beach resorts</span>
             <span>beachside resort</span>
@@ -158,577 +438,550 @@
             <span>beach resorts near trivandrum</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">6,600</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~11,070</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:29%"></div></div><span class="kd-n">29</span></div></div>
-        <div class="cl-cell"><code>/resorts-in-trivandrum/</code></div>
-        <div class="cl-cell"><span class="badge b-urgent">Urgent</span></div>
-      </div>
-
-      <!-- EN-2 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">resorts in kovalam beach trivandrum</div>
-          <div class="cl-also">
-            <span>resorts in kovalam trivandrum</span>
-            <span>best kovalam beach resorts</span>
-            <span>ayurvedic resorts in trivandrum</span>
-            <span>kovalam beach retreat</span>
-          </div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-en">EN</span>
         </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">480</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,590</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:19%"></div></div><span class="kd-n">19</span></div></div>
-        <div class="cl-cell"><code>/resorts-in-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
       </div>
 
-    </div>
-
-    <div class="group-label">German — 5 New Pages</div>
-    <div class="cluster-grid">
-
-      <!-- DE-1 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda massage</div>
-          <div class="cl-also">
+      <div class="entry">
+        <div class="wk">WK 2</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Massage</div>
+          <div class="entry-url">rockholm.com/de/ayurveda-massage/</div>
+          <div class="entry-kw">Focus: <b>ayurveda massage</b> · 3,600/mo · KD 21</div>
+          <div class="also">
             <span>ayurveda massagen</span>
             <span>abhyanga massage</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">3,600</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~5,600</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:21%"></div></div><span class="kd-n">21</span></div></div>
-        <div class="cl-cell"><code>/de/ayurveda-massage/</code></div>
-        <div class="cl-cell"><span class="badge b-urgent">Urgent</span></div>
-      </div>
-
-      <!-- DE-2 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda indien kur</div>
-          <div class="cl-also">
-            <span>ayurveda kur indien</span>
-            <span>indien ayurveda kur</span>
-            <span>ayurveda kur indien kerala</span>
-            <span>Indien Ayurveda Kerala</span>
-            <span>ayurveda urlaub indien</span>
-            <span>Ayurveda Behandlung Indien</span>
-            <span>Ayurveda Zentrum Indien</span>
-            <span>authentisches ayurveda</span>
-            <span>Ayurveda Therapy</span>
-          </div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-de">DE</span>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">480</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,190</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/de/ayurveda-kur-indien/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
       </div>
 
-      <!-- DE-3 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda kerala resort <small style="font-weight:400;color:#888">(focus per user logic)</small></div>
-          <div class="cl-also">
-            <span>ayurveda kerala</span>
-            <span>ayurveda resort kerala</span>
+      <div class="entry">
+        <div class="wk">WK 3</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Kerala Resort</div>
+          <div class="entry-url">rockholm.com/de/ayurveda-kerala-resort/</div>
+          <div class="entry-kw">Focus: <b>ayurveda kerala resort</b> · 170/mo · KD 9</div>
+          <div class="also">
+            <span>ayurveda kerala (260)</span>
+            <span>ayurveda resort kerala (110)</span>
             <span>ayurveda hotel kerala</span>
             <span>ayurveda luxus resort</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">170</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~580</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:9%"></div></div><span class="kd-n">9</span></div></div>
-        <div class="cl-cell"><code>/de/ayurveda-kerala-resort/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
-      </div>
-
-      <!-- DE-4 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">kovalam beach indien</div>
-          <div class="cl-also">
-            <span>Informational entry for German Kovalam searches</span>
-          </div>
+        <div class="entry-right">
+          <div class="words">1,200+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-de">DE</span>
+          <span class="badge b-qw">⭐ KD 9</span>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">210</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~210</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/de/kovalam-beach-indien/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
       </div>
 
-      <!-- DE-5 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda kur kerala <small style="font-weight:400;color:#888">(KD 7 — lowest in full set)</small></div>
-          <div class="cl-also">
-            <span>ayurvedakur</span>
+      <div class="entry">
+        <div class="wk">WK 4</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Kur Kerala</div>
+          <div class="entry-url">rockholm.com/de/ayurveda-kur-kerala/</div>
+          <div class="entry-kw">Focus: <b>ayurveda kur kerala</b> · 90/mo · KD 7</div>
+          <div class="also">
+            <span>ayurvedakur (140)</span>
             <span>Ayurveda Cure</span>
             <span>ayurveda kur erfahrungen</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">90</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~270</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:7%"></div></div><span class="kd-n">7</span></div></div>
-        <div class="cl-cell"><code>/de/ayurveda-kur-kerala/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
+        <div class="entry-right">
+          <div class="words">1,200+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-de">DE</span>
+          <span class="badge b-qw">⭐ KD 7</span>
+        </div>
       </div>
 
+    </div>
+
+    <div class="also-section">
+      <h4>Also This Month</h4>
+      <div class="also-items">
+        <div class="also-item">
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="ai-url">/ayurvedic-massage-therapy-packages-kerala/</span>
+          <span class="ai-kw"><b>Ayurvedic massage in Kerala</b> · 3,600/mo · also targets: ayurvedic massage in trivandrum · massage in kovalam kerala · Abhyanga massage Kerala</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="ai-url">/prices/</span>
+          <span class="ai-kw"><b>ayurveda package rates</b> · 260/mo · KD 10 · also targets: ayurvedic treatment packages in kerala · Ayurveda kerala package</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/ayurvedische-ernaehrung/</span>
+          <span class="ai-kw"><b>ayurvedische ernährung</b> · 2,400/mo · also targets: Ayurvedische Küche (590) · ayurveda ernährungsplan</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📖 Blog Rework</span>
+          <span class="ai-url">/blogs/shirodhara-therapie-ayurveda-kerala.html</span>
+          <span class="ai-kw"><b>shirodhara behandlung</b> · optimise + expand · DE</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📖 Blog Rework</span>
+          <span class="ai-url">/blogs/transform-health-meditation-rockholm.html</span>
+          <span class="ai-kw"><b>meditation centre in kerala</b> · 170/mo · fix title + add FAQ schema</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- ═══ REWORK PAGES ═══ -->
-  <div class="section">
-    <div class="section-title">Existing Pages to Rework</div>
-    <div class="section-note">8 pages · 2 per month · urgent first, then by combined volume</div>
-
-    <div class="group-label">English — 6 Reworks</div>
-    <div class="cluster-grid">
-
-      <!-- R1 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">Ayurvedic massage in Kerala</div>
-          <div class="cl-also">
-            <span>ayurvedic massage in trivandrum</span>
-            <span>massage in kovalam kerala</span>
-            <span>ayurvedic massage in kovalam</span>
-            <span>Abhyanga massage Kerala</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">3,600</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~4,990</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:19%"></div></div><span class="kd-n">19</span></div></div>
-        <div class="cl-cell"><code>/ayurvedic-massage-therapy-packages-kerala/</code></div>
-        <div class="cl-cell"><span class="badge b-urgent">Urgent</span></div>
+  <!-- ── MONTH 2 ── -->
+  <div class="month-block">
+    <div class="month-header">
+      <div>
+        <h3>Month 2 — Kovalam Cluster + Blogs</h3>
+        <div class="month-sub">3 new pages · 1 blog · Kovalam-specific and India Kur keywords</div>
       </div>
-
-      <!-- R2 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">lighthouse beach resort</div>
-          <div class="cl-also">
-            <span>Ayurvedic beach resort Kovalam</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">2,900</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~2,920</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:29%"></div></div><span class="kd-n">29</span></div></div>
-        <div class="cl-cell"><code>/rockholm-at-the-lighthouse-beach/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
-      </div>
-
-      <!-- R3 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">Panchakarma Kerala</div>
-          <div class="cl-also">
-            <span>Kerala Panchakarma treatment</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">720</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,440</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:24%"></div></div><span class="kd-n">24</span></div></div>
-        <div class="cl-cell"><code>/panchakarma-treatment-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
-      </div>
-
-      <!-- R4 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">yoga retreat kerala</div>
-          <div class="cl-also">
-            <span>meditation centre in kerala</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">390</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~560</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:26%"></div></div><span class="kd-n">26</span></div></div>
-        <div class="cl-cell"><code>/yoga-meditation-retreat-in-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
-      </div>
-
-      <!-- R5 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">kovalam ayurveda resort</div>
-          <div class="cl-also">
-            <span>Transactional — book an Ayurveda resort in Kovalam</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">320</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~320</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:30%"></div></div><span class="kd-n">30</span></div></div>
-        <div class="cl-cell"><code>/ayurveda-retreat-in-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
-      </div>
-
-      <!-- R6 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda package rates</div>
-          <div class="cl-also">
-            <span>ayurvedic treatment packages in kerala</span>
-            <span>Ayurveda kerala package</span>
-          </div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">260</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~610</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/prices/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
-      </div>
-
+      <div class="month-sub" style="text-align:right">WK 5–8</div>
     </div>
 
-    <div class="group-label">German — 2 Reworks</div>
-    <div class="cluster-grid">
+    <div class="entries">
 
-      <!-- R7 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">panchakarma</div>
-          <div class="cl-also">
-            <span>ayurveda panchakarma kur</span>
-            <span>Panchakarma Kur Indien</span>
-            <span>panchakarma indien</span>
+      <div class="entry">
+        <div class="wk">WK 5</div>
+        <div class="entry-body">
+          <div class="entry-title">Resorts in Kovalam</div>
+          <div class="entry-url">rockholm.com/resorts-in-kovalam/</div>
+          <div class="entry-kw">Focus: <b>resorts in kovalam beach trivandrum</b> · 480/mo · KD 19</div>
+          <div class="also">
+            <span>resorts in kovalam trivandrum (320)</span>
+            <span>best kovalam beach resorts (320)</span>
+            <span>ayurvedic resorts in trivandrum (260)</span>
+            <span>kovalam beach retreat (210)</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">590</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~810</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:17%"></div></div><span class="kd-n">17</span></div></div>
-        <div class="cl-cell"><code>/de/panchakarma-behandlung-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-en">EN</span>
+        </div>
       </div>
 
-      <!-- R8 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda yoga</div>
-          <div class="cl-also">
-            <span>ayurveda retreat</span>
-            <span>yoga and ayurveda</span>
-            <span>Yoga Retreat Indien</span>
-            <span>Ayurveda Yoga Retreat</span>
-            <span>ayurveda retreat indien</span>
-            <span>ayurveda wellness urlaub</span>
+      <div class="entry">
+        <div class="wk">WK 6</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Indien Kur</div>
+          <div class="entry-url">rockholm.com/de/ayurveda-kur-indien/</div>
+          <div class="entry-kw">Focus: <b>ayurveda indien kur</b> · 480/mo · KD 10</div>
+          <div class="also">
+            <span>ayurveda kur indien (480)</span>
+            <span>indien ayurveda kur (320)</span>
+            <span>ayurveda kur indien kerala (90)</span>
+            <span>Indien Ayurveda Kerala (70)</span>
+            <span>ayurveda urlaub indien (30)</span>
+            <span>Ayurveda Behandlung Indien</span>
+            <span>authentisches ayurveda</span>
+            <span>Ayurveda Zentrum Indien</span>
+            <span>Ayurveda Therapy</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">320</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,280</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/de/ayurveda-retreat-kovalam/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ═══ BLOGS ═══ -->
-  <div class="section">
-    <div class="section-title">Blog Content Plan</div>
-    <div class="section-note">5 new + 4 reworks · 1–2 per month · sorted by combined volume</div>
-
-    <div class="group-label">New Blogs to Write — 5 posts</div>
-    <div class="cluster-grid">
-
-      <!-- B1 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurvedische ernährung</div>
-          <div class="cl-also">
-            <span>Ayurvedische Küche</span>
-            <span>ayurveda ernährungsplan</span>
-          </div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-de">DE</span>
+          <span class="badge b-qw">⭐ KD 10</span>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">2,400</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~3,060</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:31%"></div></div><span class="kd-n">31</span></div></div>
-        <div class="cl-cell"><code>/de/blogs/ayurvedische-ernaehrung/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
       </div>
 
-      <!-- B2 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">best wellness retreats in india</div>
-          <div class="cl-also">
+      <div class="entry">
+        <div class="wk">WK 7</div>
+        <div class="entry-body">
+          <div class="entry-title">Kovalam Beach Indien</div>
+          <div class="entry-url">rockholm.com/de/kovalam-beach-indien/</div>
+          <div class="entry-kw">Focus: <b>kovalam beach indien</b> · 210/mo · KD 10</div>
+        </div>
+        <div class="entry-right">
+          <div class="words">1,200+ words</div>
+          <span class="badge b-new">🆕 New Page</span>
+          <span class="badge b-de">DE</span>
+          <span class="badge b-qw">⭐ KD 10</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="wk">WK 8</div>
+        <div class="entry-body">
+          <div class="entry-title">Best Wellness Retreats in India</div>
+          <div class="entry-url">rockholm.com/blogs/best-wellness-retreats-india/</div>
+          <div class="entry-kw">Focus: <b>best wellness retreats in india</b> · 720/mo · KD 30</div>
+          <div class="also">
             <span>Ayurveda for stress and anxiety</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">720</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~730</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:30%"></div></div><span class="kd-n">30</span></div></div>
-        <div class="cl-cell"><code>/blogs/best-wellness-retreats-india/</code></div>
-        <div class="cl-cell"><span class="badge b-high">High</span></div>
+        <div class="entry-right">
+          <div class="words">2,000+ words</div>
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="badge b-en">EN</span>
+        </div>
       </div>
 
-      <!-- B3 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">vata typ ayurveda</div>
-          <div class="cl-also">
-            <span>Informational — body type, diet, lifestyle guide</span>
+    </div>
+
+    <div class="also-section">
+      <h4>Also This Month</h4>
+      <div class="also-items">
+        <div class="also-item">
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="ai-url">/rockholm-at-the-lighthouse-beach/</span>
+          <span class="ai-kw"><b>lighthouse beach resort</b> · 2,900/mo · KD 29 · also: Ayurvedic beach resort Kovalam</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="ai-url">/ayurveda-retreat-in-kovalam/</span>
+          <span class="ai-kw"><b>kovalam ayurveda resort</b> · 320/mo · KD 30</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/vata-typ-ayurveda/</span>
+          <span class="ai-kw"><b>vata typ ayurveda</b> · 480/mo · KD 11 · DE</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📖 Blog Rework</span>
+          <span class="ai-url">/blogs/panchakarma.html</span>
+          <span class="ai-kw"><b>What is Panchakarma</b> · 1,300/mo · rewrite as 2,000w informational pillar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MONTH 3 ── -->
+  <div class="month-block">
+    <div class="month-header">
+      <div>
+        <h3>Month 3 — English Page Reworks</h3>
+        <div class="month-sub">4 existing pages rewritten and re-optimised · EN</div>
+      </div>
+      <div class="month-sub" style="text-align:right">WK 9–12</div>
+    </div>
+
+    <div class="entries">
+
+      <div class="entry">
+        <div class="wk">WK 9</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurvedic Massage Packages Kerala</div>
+          <div class="entry-url">rockholm.com/ayurvedic-massage-therapy-packages-kerala/</div>
+          <div class="entry-kw">Focus: <b>Ayurvedic massage in Kerala</b> · 3,600/mo · KD 19</div>
+          <div class="also">
+            <span>ayurvedic massage in trivandrum (880)</span>
+            <span>massage in kovalam kerala (320)</span>
+            <span>ayurvedic massage in kovalam (170)</span>
+            <span>Abhyanga massage Kerala</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">480</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~480</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:11%"></div></div><span class="kd-n">11</span></div></div>
-        <div class="cl-cell"><code>/de/blogs/vata-typ-ayurveda/</code></div>
-        <div class="cl-cell"><span class="badge b-med">Medium</span></div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
+        </div>
       </div>
 
-      <!-- B4 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurvedic detoxification</div>
-          <div class="cl-also">
-            <span>ayurveda entgiftung</span>
+      <div class="entry">
+        <div class="wk">WK 10</div>
+        <div class="entry-body">
+          <div class="entry-title">Lighthouse Beach Resort</div>
+          <div class="entry-url">rockholm.com/rockholm-at-the-lighthouse-beach/</div>
+          <div class="entry-kw">Focus: <b>lighthouse beach resort</b> · 2,900/mo · KD 29</div>
+          <div class="also">
+            <span>Ayurvedic beach resort Kovalam</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">140</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~230</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:18%"></div></div><span class="kd-n">18</span></div></div>
-        <div class="cl-cell"><code>/de/blogs/ayurveda-entgiftung/</code></div>
-        <div class="cl-cell"><span class="badge b-med">Medium</span></div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
+        </div>
       </div>
 
-      <!-- B5 -->
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">ayurveda anti aging</div>
-          <div class="cl-also">
-            <span>KD 6 — fastest first-page blog ranking</span>
+      <div class="entry">
+        <div class="wk">WK 11</div>
+        <div class="entry-body">
+          <div class="entry-title">Panchakarma Treatment Kovalam</div>
+          <div class="entry-url">rockholm.com/panchakarma-treatment-kovalam/</div>
+          <div class="entry-kw">Focus: <b>Panchakarma Kerala</b> · 720/mo · KD 24</div>
+          <div class="also">
+            <span>Kerala Panchakarma treatment (720)</span>
           </div>
         </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">10</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~10</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:6%"></div></div><span class="kd-n">6</span></div></div>
-        <div class="cl-cell"><code>/de/blogs/ayurveda-anti-aging/</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="wk">WK 12</div>
+        <div class="entry-body">
+          <div class="entry-title">Yoga &amp; Meditation Retreat Kovalam</div>
+          <div class="entry-url">rockholm.com/yoga-meditation-retreat-in-kovalam/</div>
+          <div class="entry-kw">Focus: <b>yoga retreat kerala</b> · 390/mo · KD 26</div>
+          <div class="also">
+            <span>meditation centre in kerala (170)</span>
+          </div>
+        </div>
+        <div class="entry-right">
+          <div class="words">1,300+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
+        </div>
       </div>
 
     </div>
 
-    <div class="group-label">Existing Blogs to Rework — 4 posts</div>
-    <div class="cluster-grid">
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">Ayurveda doshas</div>
-          <div class="cl-also"><span>Expand to full Vata / Pitta / Kapha hub — currently thin</span></div>
+    <div class="also-section">
+      <h4>Also This Month</h4>
+      <div class="also-items">
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/ayurveda-entgiftung/</span>
+          <span class="ai-kw"><b>ayurvedic detoxification</b> · 140/mo · also: ayurveda entgiftung (90) · DE</span>
         </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">1,600</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,600</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:34%"></div></div><span class="kd-n">34</span></div></div>
-        <div class="cl-cell"><code>/blogs/ayurveda-doshas-role-in-life/</code></div>
-        <div class="cl-cell"><span class="badge b-rw">Rework</span></div>
-      </div>
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">What is Panchakarma</div>
-          <div class="cl-also"><span>Very thin — rewrite as 2,000w informational pillar</span></div>
+        <div class="also-item">
+          <span class="badge b-blog">📖 Blog Rework</span>
+          <span class="ai-url">/blogs/ayurveda-doshas-role-in-life/</span>
+          <span class="ai-kw"><b>Ayurveda doshas</b> · 1,600/mo · expand to full Vata / Pitta / Kapha hub</span>
         </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">1,300</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~1,300</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:33%"></div></div><span class="kd-n">33</span></div></div>
-        <div class="cl-cell"><code>/blogs/panchakarma.html</code></div>
-        <div class="cl-cell"><span class="badge b-rw">Rework</span></div>
       </div>
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">meditation centre in kerala</div>
-          <div class="cl-also"><span>Fix title tag + add FAQ schema — pos 6.3, low CTR</span></div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">170</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~170</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:15%"></div></div><span class="kd-n">15</span></div></div>
-        <div class="cl-cell"><code>/blogs/transform-health-meditation-rockholm.html</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
-      </div>
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">shirodhara behandlung</div>
-          <div class="cl-also"><span>Optimise + expand — pos ~10, low content</span></div>
-        </div>
-        <div class="cl-cell"><span class="lang de">DE</span></div>
-        <div class="cl-cell"><div class="cl-num">20</div><div class="cl-sub">focus vol</div></div>
-        <div class="cl-cell"><div class="cl-num">~20</div><div class="cl-sub">combined</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/blogs/shirodhara-therapie-ayurveda-kerala.html</code></div>
-        <div class="cl-cell"><span class="badge b-qw">Quick Win</span></div>
-      </div>
-
     </div>
   </div>
 
-  <!-- ═══ DEFEND ═══ -->
-  <div class="section">
-    <div class="section-title">Pages to Defend</div>
-    <div class="section-note">2 pages · already ranking well · quarterly refresh only</div>
-    <div class="cluster-grid">
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">Niyamas in Yoga</div>
-          <div class="cl-also"><span>Pos 3.35 · 179 clicks/mo · quarterly refresh</span></div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">590</div><div class="cl-sub">vol</div></div>
-        <div class="cl-cell"><div class="cl-num">Pos 3.35</div><div class="cl-sub">current</div></div>
-        <div class="cl-cell"><div class="kd-wrap med"><div class="kd-bar"><div class="kd-fill" style="width:34%"></div></div><span class="kd-n">34</span></div></div>
-        <div class="cl-cell"><code>/blogs/how-the-niyamas-in-yoga-guide.html</code></div>
-        <div class="cl-cell"><span class="badge b-def">Defend</span></div>
+  <!-- ── MONTH 4 ── -->
+  <div class="month-block">
+    <div class="month-header">
+      <div>
+        <h3>Month 4 — German Page Reworks + Final EN</h3>
+        <div class="month-sub">4 existing pages rewritten · DE + EN</div>
       </div>
-
-      <div class="cluster">
-        <div class="cl-main">
-          <div class="cl-focus">Ayurveda cuisine</div>
-          <div class="cl-also"><span>Pos 5.26 · 658 clicks/mo · add seasonal recipes</span></div>
-        </div>
-        <div class="cl-cell"><span class="lang en">EN</span></div>
-        <div class="cl-cell"><div class="cl-num">10</div><div class="cl-sub">vol</div></div>
-        <div class="cl-cell"><div class="cl-num">Pos 5.26</div><div class="cl-sub">current</div></div>
-        <div class="cl-cell"><div class="kd-wrap easy"><div class="kd-bar"><div class="kd-fill" style="width:10%"></div></div><span class="kd-n">10</span></div></div>
-        <div class="cl-cell"><code>/ayurveda-cuisine/</code></div>
-        <div class="cl-cell"><span class="badge b-def">Defend</span></div>
-      </div>
-
+      <div class="month-sub" style="text-align:right">WK 13–16</div>
     </div>
-  </div>
 
-  <!-- ═══ SPECS ═══ -->
-  <div class="section">
-    <div class="section-title">Content Specifications</div>
-    <div class="section-note">Minimum standards before publishing</div>
-    <div class="tbl-wrap">
-      <table>
-        <thead>
-          <tr><th>Spec</th><th>New Pages</th><th>Page Reworks</th><th>New Blogs</th><th>Blog Reworks</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Title tag</td><td>50–58 characters</td><td>Full rewrite</td><td>Keyword-first title</td><td>Full rewrite</td></tr>
-          <tr><td>Meta description</td><td>150–155 characters</td><td>Full rewrite</td><td>150–155 characters</td><td>Full rewrite</td></tr>
-          <tr><td>Word count</td><td>1,200–2,000 words</td><td>1,200–2,000 words</td><td>1,500–2,500 words</td><td>Expand as needed</td></tr>
-          <tr><td>FAQ schema</td><td>5–6 Q&amp;A pairs</td><td>Add or improve</td><td>5–8 Q&amp;A pairs</td><td>Add or expand</td></tr>
-          <tr><td>Images</td><td>5–8 with alt text</td><td>Update alt text</td><td>3–5 with alt text</td><td>Update alt text</td></tr>
-          <tr><td>Internal links</td><td>3–5 links</td><td>3–5 links</td><td>2–3 to service pages</td><td>3 to service pages</td></tr>
-          <tr><td>After publish</td><td>Submit to GSC</td><td>Submit to GSC</td><td>Submit to GSC</td><td>Submit to GSC</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    <div class="entries">
 
-  <!-- ═══ TIMELINE ═══ -->
-  <div class="section">
-    <div class="section-title">5-Month Execution Timeline</div>
-    <div class="section-note">1 new page/week · 1–2 new blogs/month · 2 page reworks + 2 blog reworks/month</div>
-    <div class="tl-list">
-
-      <div class="tl">
-        <div class="tl-left"><div class="tl-dot">Month<br>1</div><div class="tl-line"></div></div>
-        <div class="tl-box">
-          <h4>Highest-Volume New Pages + Urgent Reworks</h4>
-          <ul>
-            <li><b>New page W1:</b> /resorts-in-trivandrum/ — 6,600 vol, combined ~11,070</li>
-            <li><b>New page W2:</b> /de/ayurveda-massage/ — 3,600 vol DE, combined ~5,600</li>
-            <li><b>New page W3:</b> /de/ayurveda-kerala-resort/ — KD 9, clusters ayurveda kerala + ayurveda resort kerala</li>
-            <li><b>New page W4:</b> /de/ayurveda-kur-kerala/ — KD 7, lowest KD in entire plan</li>
-            <li><b>Page reworks (2):</b> /ayurvedic-massage-therapy-packages-kerala/ URGENT · /prices/ Quick Win</li>
-            <li><b>Blog reworks (2):</b> Meditation blog (title + FAQ fix) · Shirodhara DE (optimise)</li>
-          </ul>
+      <div class="entry">
+        <div class="wk">WK 13</div>
+        <div class="entry-body">
+          <div class="entry-title">Panchakarma Behandlung Kovalam</div>
+          <div class="entry-url">rockholm.com/de/panchakarma-behandlung-kovalam/</div>
+          <div class="entry-kw">Focus: <b>panchakarma</b> · 590/mo · KD 17</div>
+          <div class="also">
+            <span>ayurveda panchakarma kur (110)</span>
+            <span>Panchakarma Kur Indien (90)</span>
+            <span>panchakarma indien (20)</span>
+          </div>
+        </div>
+        <div class="entry-right">
+          <div class="words">1,500+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-de">DE</span>
         </div>
       </div>
 
-      <div class="tl">
-        <div class="tl-left"><div class="tl-dot">Month<br>2</div><div class="tl-line"></div></div>
-        <div class="tl-box">
-          <h4>Kovalam Pages + High-Priority Reworks</h4>
-          <ul>
-            <li><b>New page W5:</b> /resorts-in-kovalam/ — combined ~1,590</li>
-            <li><b>New page W6:</b> /de/ayurveda-kur-indien/ — KD 10, clusters 9 Indien Kur keywords</li>
-            <li><b>New page W7:</b> /de/kovalam-beach-indien/ — KD 10</li>
-            <li><b>Page reworks (2):</b> /rockholm-at-the-lighthouse-beach/ (2,900 vol) · /ayurveda-retreat-in-kovalam/</li>
-            <li><b>New blogs (2):</b> ayurvedische ernährung DE (2,400 vol) · best wellness retreats in India (720 vol)</li>
-            <li><b>Blog rework (1):</b> What is Panchakarma — rewrite as 2,000w pillar</li>
-          </ul>
+      <div class="entry">
+        <div class="wk">WK 14</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Retreat Kovalam</div>
+          <div class="entry-url">rockholm.com/de/ayurveda-retreat-kovalam/</div>
+          <div class="entry-kw">Focus: <b>ayurveda yoga</b> · 320/mo · KD 10</div>
+          <div class="also">
+            <span>ayurveda retreat (320)</span>
+            <span>yoga and ayurveda (320)</span>
+            <span>Yoga Retreat Indien (110)</span>
+            <span>Ayurveda Yoga Retreat (110)</span>
+            <span>ayurveda retreat indien (70)</span>
+            <span>ayurveda wellness urlaub (30)</span>
+          </div>
+        </div>
+        <div class="entry-right">
+          <div class="words">1,300+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-de">DE</span>
         </div>
       </div>
 
-      <div class="tl">
-        <div class="tl-left"><div class="tl-dot">Month<br>3</div><div class="tl-line"></div></div>
-        <div class="tl-box">
-          <h4>Remaining Reworks + Blogs</h4>
-          <ul>
-            <li><b>Page reworks (4):</b> /panchakarma-treatment-kovalam/ · /yoga-meditation-retreat-in-kovalam/ · /de/panchakarma-behandlung-kovalam/ · /de/ayurveda-retreat-kovalam/</li>
-            <li><b>New blogs (2):</b> vata typ ayurveda DE (480 vol) · ayurvedic detoxification DE (230 combined)</li>
-            <li><b>Blog rework (1):</b> Ayurveda doshas — expand to Vata / Pitta / Kapha hub</li>
-          </ul>
+      <div class="entry">
+        <div class="wk">WK 15</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Retreat in Kovalam</div>
+          <div class="entry-url">rockholm.com/ayurveda-retreat-in-kovalam/</div>
+          <div class="entry-kw">Focus: <b>kovalam ayurveda resort</b> · 320/mo · KD 30</div>
+        </div>
+        <div class="entry-right">
+          <div class="words">1,300+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
         </div>
       </div>
 
-      <div class="tl">
-        <div class="tl-left"><div class="tl-dot">Month<br>4</div><div class="tl-line"></div></div>
-        <div class="tl-box">
-          <h4>Final Blog + Internal Linking + Schema</h4>
-          <ul>
-            <li><b>New blog (1):</b> ayurveda anti aging DE (KD 6 — quick win)</li>
-            <li><b>Internal link audit</b> — connect all new and reworked pages to each other and to service pages</li>
-            <li><b>FAQ schema check</b> on every published page</li>
-            <li><b>Defend pages:</b> seasonal update for Ayurveda cuisine · Niyamas in Yoga</li>
-          </ul>
+      <div class="entry">
+        <div class="wk">WK 16</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurveda Packages &amp; Rates</div>
+          <div class="entry-url">rockholm.com/prices/</div>
+          <div class="entry-kw">Focus: <b>ayurveda package rates</b> · 260/mo · KD 10</div>
+          <div class="also">
+            <span>ayurvedic treatment packages in kerala (210)</span>
+            <span>Ayurveda kerala package (140)</span>
+          </div>
         </div>
-      </div>
-
-      <div class="tl">
-        <div class="tl-left"><div class="tl-dot">Month<br>5</div></div>
-        <div class="tl-box">
-          <h4>Full Audit + GSC Submission + Phase 2 Prep</h4>
-          <ul>
-            <li><b>Sitemap update</b> and full GSC submission for all Phase 1 URLs</li>
-            <li><b>Ranking check</b> — compare positions vs pre-Phase 1 baseline</li>
-            <li><b>Image alt text audit</b> across all pages</li>
-            <li><b>Phase 2 brief:</b> backlinks · Core Web Vitals · hreflang EN/DE · AI search schema</li>
-          </ul>
+        <div class="entry-right">
+          <div class="words">1,000+ words</div>
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="badge b-en">EN</span>
+          <span class="badge b-qw">⭐ KD 10</span>
         </div>
       </div>
 
     </div>
+
+    <div class="also-section">
+      <h4>Also This Month</h4>
+      <div class="also-items">
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/ayurveda-anti-aging/</span>
+          <span class="ai-kw"><b>ayurveda anti aging</b> · KD 6 · quickest first-page blog ranking in the plan · DE</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📖 Blog Rework</span>
+          <span class="ai-url">/blogs/how-the-niyamas-in-yoga-guide.html</span>
+          <span class="ai-kw"><b>Niyamas in Yoga</b> · 590/mo · already pos 3.35 (179 clicks) · quarterly refresh only</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
+  <!-- ── MONTH 5 ── -->
+  <div class="month-block">
+    <div class="month-header">
+      <div>
+        <h3>Month 5 — Audit, Blogs &amp; Phase 2 Prep</h3>
+        <div class="month-sub">Internal linking · Schema check · GSC submission · Phase 2 brief</div>
+      </div>
+      <div class="month-sub" style="text-align:right">WK 17–20</div>
+    </div>
+
+    <div class="entries">
+
+      <div class="entry">
+        <div class="wk">WK 17</div>
+        <div class="entry-body">
+          <div class="entry-title">Ayurvedische Ernährung</div>
+          <div class="entry-url">rockholm.com/de/blogs/ayurvedische-ernaehrung/</div>
+          <div class="entry-kw">Focus: <b>ayurvedische ernährung</b> · 2,400/mo · KD 31</div>
+          <div class="also">
+            <span>Ayurvedische Küche (590)</span>
+            <span>ayurveda ernährungsplan (70)</span>
+          </div>
+        </div>
+        <div class="entry-right">
+          <div class="words">2,000+ words</div>
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="badge b-de">DE</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="wk">WK 18</div>
+        <div class="entry-body">
+          <div class="entry-title">Internal Link Audit</div>
+          <div class="entry-kw">Connect all new + reworked pages · add 3–5 internal links per page · update anchor text</div>
+        </div>
+        <div class="entry-right">
+          <div class="words">All 16 pages</div>
+          <span class="badge b-rework">⚙️ Audit</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="wk">WK 19</div>
+        <div class="entry-body">
+          <div class="entry-title">FAQ Schema Verification</div>
+          <div class="entry-kw">Verify FAQ schema on every page · fix missing markup · resubmit affected URLs to GSC</div>
+        </div>
+        <div class="entry-right">
+          <div class="words">All 16 pages</div>
+          <span class="badge b-rework">⚙️ Audit</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="wk">WK 20</div>
+        <div class="entry-body">
+          <div class="entry-title">Full GSC Submission &amp; Ranking Baseline</div>
+          <div class="entry-kw">Update sitemap · submit all Phase 1 URLs · record ranking positions · prepare Phase 2 brief</div>
+        </div>
+        <div class="entry-right">
+          <div class="words">Phase 2 ready</div>
+          <span class="badge b-pillar">🚀 Phase 2</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="also-section">
+      <h4>Also This Month</h4>
+      <div class="also-items">
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/vata-typ-ayurveda/</span>
+          <span class="ai-kw"><b>vata typ ayurveda</b> · 480/mo · KD 11 · Informational · DE</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-blog">📝 New Blog</span>
+          <span class="ai-url">/de/blogs/ayurveda-entgiftung/</span>
+          <span class="ai-kw"><b>ayurvedic detoxification</b> · 140/mo · also: ayurveda entgiftung (90) · DE</span>
+        </div>
+        <div class="also-item">
+          <span class="badge b-rework">🔄 Rework</span>
+          <span class="ai-url">/ayurveda-cuisine/</span>
+          <span class="ai-kw"><b>Ayurveda cuisine</b> · pos 5.26 · 658 clicks/mo · add seasonal recipes to defend ranking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ═══════ DEFEND ═══════ -->
+  <div class="section-title">Pages Already Ranking — Defend Only</div>
+  <div class="section-sub">These pages hold strong positions. Do not restructure — quarterly refresh only.</div>
+  <div class="defend-grid">
+    <div class="defend-card">
+      <div class="defend-check">✅</div>
+      <div>
+        <div class="dc-url">/blogs/how-the-niyamas-in-yoga-guide.html</div>
+        <div class="dc-kw">Niyamas in Yoga</div>
+        <div class="dc-pos">Position 3.35 &nbsp;·&nbsp; 179 clicks/mo &nbsp;·&nbsp; 590 vol</div>
+      </div>
+    </div>
+    <div class="defend-card">
+      <div class="defend-check">✅</div>
+      <div>
+        <div class="dc-url">/ayurveda-cuisine/</div>
+        <div class="dc-kw">Ayurveda Cuisine</div>
+        <div class="dc-pos">Position 5.26 &nbsp;·&nbsp; 658 clicks/mo &nbsp;·&nbsp; 10 vol</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
 
 <div class="footer">
-  <b>Gilead Digital</b> — SEO Content Plan for Rockholm, Kovalam · Phase 1 · June 2026 · gileaddigital.in
+  <b>Gilead Digital</b> &nbsp;·&nbsp; SEO Content Plan for Rockholm, Kovalam &nbsp;·&nbsp; Phase 1 of 2 &nbsp;·&nbsp; June 2026
 </div>
 
 </body>
