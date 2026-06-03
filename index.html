@@ -10,17 +10,12 @@
       --blue:   #1a56a0;
       --accent: #e2a830;
       --green:  #16a34a;
-      --red:    #dc2626;
-      --purple: #7c3aed;
-      --orange: #ea580c;
       --gray:   #6b7280;
       --light:  #f3f4f6;
       --border: #e5e7eb;
       --text:   #111827;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       font-family: 'Segoe UI', system-ui, Arial, sans-serif;
       background: #f0f2f5;
@@ -29,305 +24,95 @@
       line-height: 1.6;
     }
 
-    /* ── HEADER ── */
-    .site-header {
-      background: var(--navy);
-      color: #fff;
-      padding: 40px 56px 36px;
-    }
-    .site-header .brand {
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.55);
-      margin-bottom: 10px;
-    }
-    .site-header h1 {
-      font-size: 30px;
-      font-weight: 800;
-      letter-spacing: -.4px;
-    }
+    /* HEADER */
+    .site-header { background: var(--navy); color: #fff; padding: 40px 56px 36px; }
+    .site-header .brand { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 10px; }
+    .site-header h1 { font-size: 30px; font-weight: 800; letter-spacing: -.4px; }
     .site-header h1 span { color: var(--accent); }
-    .site-header .tagline {
-      margin-top: 6px;
-      font-size: 14px;
-      color: rgba(255,255,255,.6);
-    }
+    .site-header .tagline { margin-top: 6px; font-size: 14px; color: rgba(255,255,255,.6); }
 
-    /* ── PAGE WRAP ── */
-    .page { max-width: 980px; margin: 0 auto; padding: 40px 24px 72px; }
+    /* PAGE */
+    .page { max-width: 960px; margin: 0 auto; padding: 40px 24px 72px; }
 
-    /* ── STATS ROW ── */
-    .stats {
-      display: flex; flex-wrap: wrap; gap: 14px;
-      margin-bottom: 40px;
-    }
-    .stat-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 26px;
-      text-align: center;
-      min-width: 110px;
-      flex: 1;
-    }
-    .stat-card .num {
-      font-size: 34px;
-      font-weight: 800;
-      color: var(--navy);
-      line-height: 1;
-    }
+    /* STATS */
+    .stats { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 40px; }
+    .stat-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 24px; text-align: center; flex: 1; min-width: 100px; }
+    .stat-card .num { font-size: 34px; font-weight: 800; color: var(--navy); line-height: 1; }
     .stat-card .num.green { color: var(--green); }
-    .stat-card .lbl {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-      color: var(--gray);
-      margin-top: 5px;
-      font-weight: 600;
-    }
+    .stat-card .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--gray); margin-top: 5px; font-weight: 600; }
 
-    /* ── SECTION TITLE ── */
-    .section-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 6px;
-    }
-    .section-sub {
-      font-size: 13px;
-      color: var(--gray);
-      margin-bottom: 24px;
-    }
+    /* SECTION */
+    .section-title { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .section-sub { font-size: 13px; color: var(--gray); margin-bottom: 24px; }
 
-    /* ── PROCESS STEPS ── */
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 12px;
-      margin-bottom: 44px;
-    }
-    .step {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 18px 12px;
-      text-align: center;
-    }
-    .step-num {
-      width: 34px; height: 34px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 10px;
-    }
-    .step-icon { font-size: 22px; margin-bottom: 6px; }
-    .step-name { font-size: 12px; font-weight: 700; color: var(--text); }
+    /* 7-STEP PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 44px; }
+    .step { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 10px; text-align: center; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; }
+    .step-icon { font-size: 20px; margin-bottom: 6px; }
+    .step-name { font-size: 11.5px; font-weight: 700; color: var(--text); line-height: 1.3; }
 
-    /* ── MONTH BLOCK ── */
-    .month-block {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 24px;
-      overflow: hidden;
-    }
-    .month-header {
-      background: var(--navy);
-      color: #fff;
-      padding: 14px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .month-header h3 {
-      font-size: 15px;
-      font-weight: 700;
-    }
-    .month-header .month-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,.6);
-    }
+    /* MONTH BLOCK */
+    .month-block { background: #fff; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 20px; overflow: hidden; }
+    .month-header { background: var(--navy); color: #fff; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; }
+    .month-header h3 { font-size: 15px; font-weight: 700; }
+    .month-header .wk-range { font-size: 12px; color: rgba(255,255,255,.55); }
 
-    /* ── WEEK ENTRY ── */
-    .entries { padding: 0 22px; }
-    .entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    /* ENTRY ROW */
+    .entry { display: flex; align-items: center; gap: 14px; padding: 14px 22px; border-bottom: 1px solid var(--border); }
     .entry:last-child { border-bottom: none; }
 
-    .wk {
-      background: var(--navy);
-      color: #fff;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .5px;
-      padding: 4px 8px;
-      border-radius: 6px;
-      white-space: nowrap;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
+    .wk { background: var(--navy); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .4px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; }
 
     .entry-body { flex: 1; }
-    .entry-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-    .entry-url {
-      font-family: 'Consolas', monospace;
-      font-size: 11.5px;
-      color: var(--blue);
-      margin-bottom: 4px;
-    }
-    .entry-kw {
-      font-size: 12.5px;
-      color: var(--gray);
-    }
+    .entry-title { font-size: 14px; font-weight: 700; color: var(--text); }
+    .entry-url { font-family: 'Consolas', monospace; font-size: 11.5px; color: var(--blue); margin-top: 2px; }
+    .entry-kw { font-size: 12.5px; color: var(--gray); margin-top: 3px; }
     .entry-kw b { color: var(--text); }
-    .also {
-      margin-top: 4px;
-      font-size: 11.5px;
-      color: #9ca3af;
-    }
-    .also span {
-      display: inline-block;
-      background: var(--light);
-      border-radius: 4px;
-      padding: 1px 6px;
-      margin: 2px 2px 0 0;
-      font-size: 11px;
-    }
 
-    .entry-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 5px;
-      flex-shrink: 0;
-      min-width: 130px;
-    }
-    .words {
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--navy);
-    }
+    .entry-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
+    .words { font-size: 12.5px; font-weight: 700; color: var(--navy); white-space: nowrap; }
 
-    /* ── BADGES ── */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: .2px;
-      white-space: nowrap;
-    }
+    /* BADGES */
+    .badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 20px; font-size: 10.5px; font-weight: 700; white-space: nowrap; }
     .b-new    { background: #dcfce7; color: #15803d; }
     .b-rework { background: #fef3c7; color: #b45309; }
     .b-blog   { background: #ede9fe; color: #6d28d9; }
+    .b-brework { background: #fce7f3; color: #9d174d; }
     .b-en     { background: #dbeafe; color: #1e40af; }
     .b-de     { background: #ffedd5; color: #c2410c; }
-    .b-pillar { background: var(--navy); color: #fbbf24; }
     .b-qw     { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; }
     .b-defend { background: #ecfdf5; color: #065f46; }
+    .b-audit  { background: #f1f5f9; color: #475569; }
 
-    /* ── ALSO SECTION (reworks/blogs inside month) ── */
-    .also-section {
-      background: var(--light);
-      border-top: 1px solid var(--border);
-      padding: 14px 22px;
-    }
-    .also-section h4 {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      color: var(--gray);
-      margin-bottom: 10px;
-    }
-    .also-items { display: flex; flex-direction: column; gap: 6px; }
-    .also-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 12.5px;
-    }
-    .also-item .ai-url {
-      font-family: 'Consolas', monospace;
-      font-size: 11px;
-      color: var(--blue);
-      flex-shrink: 0;
-    }
-    .also-item .ai-kw { color: var(--gray); }
-    .also-item .ai-kw b { color: var(--text); }
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
 
-    /* ── DEFEND SECTION ── */
-    .defend-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 4px;
-    }
-    .defend-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .defend-check {
-      font-size: 22px;
-      flex-shrink: 0;
-    }
-    .defend-card .dc-url {
-      font-family: 'Consolas', monospace;
-      font-size: 11px;
-      color: var(--blue);
-      margin-bottom: 3px;
-    }
-    .defend-card .dc-kw { font-size: 13px; font-weight: 700; }
-    .defend-card .dc-pos { font-size: 12px; color: var(--gray); }
+    /* DEFEND GRID */
+    .defend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .defend-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+    .defend-icon { font-size: 22px; flex-shrink: 0; }
+    .defend-card .dc-url { font-family: 'Consolas', monospace; font-size: 11px; color: var(--blue); margin-bottom: 3px; }
+    .defend-card .dc-kw { font-size: 13.5px; font-weight: 700; }
+    .defend-card .dc-meta { font-size: 12px; color: var(--gray); }
 
-    /* ── DIVIDER ── */
-    .divider { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--navy);
-      color: rgba(255,255,255,.6);
-      text-align: center;
-      padding: 24px;
-      font-size: 13px;
-    }
+    /* FOOTER */
+    .footer { background: var(--navy); color: rgba(255,255,255,.6); text-align: center; padding: 24px; font-size: 13px; }
     .footer b { color: #fff; }
 
-    @media (max-width: 640px) {
+    @media (max-width: 720px) {
       .site-header { padding: 28px 20px; }
       .page { padding: 24px 14px 52px; }
-      .entry { flex-direction: column; gap: 8px; }
-      .entry-right { flex-direction: row; align-items: center; }
+      .process-grid { grid-template-columns: repeat(4, 1fr); }
+      .entry { flex-wrap: wrap; }
+      .entry-right { flex-direction: row; align-items: center; width: 100%; }
       .defend-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<!-- ═══════ HEADER ═══════ -->
+<!-- HEADER -->
 <div class="site-header">
   <div class="brand">Gilead Digital &nbsp;·&nbsp; SEO Content Plan &nbsp;·&nbsp; June 2026</div>
   <h1>SEO Content Plan — <span>Rockholm</span></h1>
@@ -336,649 +121,456 @@
 
 <div class="page">
 
-  <!-- ═══════ STATS ═══════ -->
+  <!-- STATS -->
   <div class="stats">
-    <div class="stat-card">
-      <div class="num">16</div>
-      <div class="lbl">Pages &amp; Reworks</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">9</div>
-      <div class="lbl">Blogs</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">5</div>
-      <div class="lbl">Months</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">1/wk</div>
-      <div class="lbl">Delivery</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">~20K</div>
-      <div class="lbl">New Words</div>
-    </div>
-    <div class="stat-card">
-      <div class="num green">75</div>
-      <div class="lbl">Keywords</div>
-    </div>
+    <div class="stat-card"><div class="num">7</div><div class="lbl">New Pages</div></div>
+    <div class="stat-card"><div class="num">8</div><div class="lbl">Reworks</div></div>
+    <div class="stat-card"><div class="num">5</div><div class="lbl">New Blogs</div></div>
+    <div class="stat-card"><div class="num">4</div><div class="lbl">Blog Reworks</div></div>
+    <div class="stat-card"><div class="num">5</div><div class="lbl">Months</div></div>
+    <div class="stat-card"><div class="num">1/wk</div><div class="lbl">Delivery</div></div>
+    <div class="stat-card"><div class="num green">~22K</div><div class="lbl">New Words</div></div>
   </div>
 
-  <!-- ═══════ PROCESS ═══════ -->
+  <!-- 7-STEP PROCESS -->
   <div class="section-title">How We Create Each Page</div>
   <div class="section-sub">Every new page and rework follows the same 7-step process</div>
   <div class="process-grid">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-icon">🔍</div>
-      <div class="step-name">Keyword Research</div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-icon">📊</div>
-      <div class="step-name">Competitor Analysis</div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-icon">🎯</div>
-      <div class="step-name">Choose Keywords</div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-icon">✍️</div>
-      <div class="step-name">Write Content</div>
-    </div>
-    <div class="step">
-      <div class="step-num">5</div>
-      <div class="step-icon">⚙️</div>
-      <div class="step-name">Optimise &amp; Meta Tags</div>
-    </div>
-    <div class="step">
-      <div class="step-num">6</div>
-      <div class="step-icon">✅</div>
-      <div class="step-name">Your Approval</div>
-    </div>
-    <div class="step">
-      <div class="step-num">7</div>
-      <div class="step-icon">🚀</div>
-      <div class="step-name">Page Live</div>
-    </div>
+    <div class="step"><div class="step-num">1</div><div class="step-icon">🔍</div><div class="step-name">Keyword Research</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-icon">📊</div><div class="step-name">Competitor Analysis</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-icon">🎯</div><div class="step-name">Choose Keywords</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-icon">✍️</div><div class="step-name">Write Content</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-icon">⚙️</div><div class="step-name">Optimise &amp; Meta Tags</div></div>
+    <div class="step"><div class="step-num">6</div><div class="step-icon">✅</div><div class="step-name">Your Approval</div></div>
+    <div class="step"><div class="step-num">7</div><div class="step-icon">🚀</div><div class="step-name">Page Live</div></div>
   </div>
 
-  <hr class="divider">
+  <hr>
 
-  <!-- ═══════ SCHEDULE ═══════ -->
+  <!-- SCHEDULE -->
   <div class="section-title">5-Month Content Schedule</div>
-  <div class="section-sub">One page or rework per week · 1–2 blogs per month · sorted by priority</div>
+  <div class="section-sub">One page per week · sorted by priority within each month</div>
 
-  <!-- ── MONTH 1 ── -->
+  <!-- MONTH 1 -->
   <div class="month-block">
     <div class="month-header">
-      <div>
-        <h3>Month 1 — High-Volume New Pages</h3>
-        <div class="month-sub">4 new pages · start with the biggest volume opportunities</div>
-      </div>
-      <div class="month-sub" style="text-align:right">WK 1–4</div>
+      <h3>Month 1 — High-Volume New Pages</h3>
+      <span class="wk-range">WK 1–4</span>
     </div>
 
-    <div class="entries">
-
-      <div class="entry">
-        <div class="wk">WK 1</div>
-        <div class="entry-body">
-          <div class="entry-title">Resorts in Trivandrum</div>
-          <div class="entry-url">rockholm.com/resorts-in-trivandrum/</div>
-          <div class="entry-kw">Focus: <b>resorts in trivandrum</b> · 6,600/mo · KD 29</div>
-          <div class="also">
-            <span>beach resorts in trivandrum</span>
-            <span>thiruvananthapuram beach resorts</span>
-            <span>beachside resort</span>
-            <span>resorts in tvm</span>
-            <span>best resorts in thiruvananthapuram</span>
-            <span>beach resorts near trivandrum</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-en">EN</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 1</div>
+      <div class="entry-body">
+        <div class="entry-title">Resorts in Trivandrum</div>
+        <div class="entry-url">rockholm.com/resorts-in-trivandrum/</div>
+        <div class="entry-kw">Keyword: <b>resorts in trivandrum</b> · 6,600/mo · KD 29</div>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 2</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Massage</div>
-          <div class="entry-url">rockholm.com/de/ayurveda-massage/</div>
-          <div class="entry-kw">Focus: <b>ayurveda massage</b> · 3,600/mo · KD 21</div>
-          <div class="also">
-            <span>ayurveda massagen</span>
-            <span>abhyanga massage</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-de">DE</span>
-        </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-en">EN</span>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 3</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Kerala Resort</div>
-          <div class="entry-url">rockholm.com/de/ayurveda-kerala-resort/</div>
-          <div class="entry-kw">Focus: <b>ayurveda kerala resort</b> · 170/mo · KD 9</div>
-          <div class="also">
-            <span>ayurveda kerala (260)</span>
-            <span>ayurveda resort kerala (110)</span>
-            <span>ayurveda hotel kerala</span>
-            <span>ayurveda luxus resort</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,200+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-de">DE</span>
-          <span class="badge b-qw">⭐ KD 9</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 4</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Kur Kerala</div>
-          <div class="entry-url">rockholm.com/de/ayurveda-kur-kerala/</div>
-          <div class="entry-kw">Focus: <b>ayurveda kur kerala</b> · 90/mo · KD 7</div>
-          <div class="also">
-            <span>ayurvedakur (140)</span>
-            <span>Ayurveda Cure</span>
-            <span>ayurveda kur erfahrungen</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,200+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-de">DE</span>
-          <span class="badge b-qw">⭐ KD 7</span>
-        </div>
-      </div>
-
     </div>
 
-    <div class="also-section">
-      <h4>Also This Month</h4>
-      <div class="also-items">
-        <div class="also-item">
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="ai-url">/ayurvedic-massage-therapy-packages-kerala/</span>
-          <span class="ai-kw"><b>Ayurvedic massage in Kerala</b> · 3,600/mo · also targets: ayurvedic massage in trivandrum · massage in kovalam kerala · Abhyanga massage Kerala</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="ai-url">/prices/</span>
-          <span class="ai-kw"><b>ayurveda package rates</b> · 260/mo · KD 10 · also targets: ayurvedic treatment packages in kerala · Ayurveda kerala package</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/ayurvedische-ernaehrung/</span>
-          <span class="ai-kw"><b>ayurvedische ernährung</b> · 2,400/mo · also targets: Ayurvedische Küche (590) · ayurveda ernährungsplan</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📖 Blog Rework</span>
-          <span class="ai-url">/blogs/shirodhara-therapie-ayurveda-kerala.html</span>
-          <span class="ai-kw"><b>shirodhara behandlung</b> · optimise + expand · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📖 Blog Rework</span>
-          <span class="ai-url">/blogs/transform-health-meditation-rockholm.html</span>
-          <span class="ai-kw"><b>meditation centre in kerala</b> · 170/mo · fix title + add FAQ schema</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 2</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Massage</div>
+        <div class="entry-url">rockholm.com/de/ayurveda-massage/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda massage</b> · 3,600/mo · KD 21</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-de">DE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 3</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Kerala Resort</div>
+        <div class="entry-url">rockholm.com/de/ayurveda-kerala-resort/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda kerala resort</b> · 170/mo · KD 9</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,200+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-de">DE</span>
+        <span class="badge b-qw">⭐ KD 9</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 4</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Kur Kerala</div>
+        <div class="entry-url">rockholm.com/de/ayurveda-kur-kerala/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda kur kerala</b> · 90/mo · KD 7</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,200+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-de">DE</span>
+        <span class="badge b-qw">⭐ KD 7</span>
       </div>
     </div>
   </div>
 
-  <!-- ── MONTH 2 ── -->
+  <!-- MONTH 2 -->
   <div class="month-block">
     <div class="month-header">
-      <div>
-        <h3>Month 2 — Kovalam Cluster + Blogs</h3>
-        <div class="month-sub">3 new pages · 1 blog · Kovalam-specific and India Kur keywords</div>
-      </div>
-      <div class="month-sub" style="text-align:right">WK 5–8</div>
+      <h3>Month 2 — Kovalam &amp; India Pages + Blog</h3>
+      <span class="wk-range">WK 5–8</span>
     </div>
 
-    <div class="entries">
-
-      <div class="entry">
-        <div class="wk">WK 5</div>
-        <div class="entry-body">
-          <div class="entry-title">Resorts in Kovalam</div>
-          <div class="entry-url">rockholm.com/resorts-in-kovalam/</div>
-          <div class="entry-kw">Focus: <b>resorts in kovalam beach trivandrum</b> · 480/mo · KD 19</div>
-          <div class="also">
-            <span>resorts in kovalam trivandrum (320)</span>
-            <span>best kovalam beach resorts (320)</span>
-            <span>ayurvedic resorts in trivandrum (260)</span>
-            <span>kovalam beach retreat (210)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-en">EN</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 5</div>
+      <div class="entry-body">
+        <div class="entry-title">Resorts in Kovalam</div>
+        <div class="entry-url">rockholm.com/resorts-in-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>resorts in kovalam beach trivandrum</b> · 480/mo · KD 19</div>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 6</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Indien Kur</div>
-          <div class="entry-url">rockholm.com/de/ayurveda-kur-indien/</div>
-          <div class="entry-kw">Focus: <b>ayurveda indien kur</b> · 480/mo · KD 10</div>
-          <div class="also">
-            <span>ayurveda kur indien (480)</span>
-            <span>indien ayurveda kur (320)</span>
-            <span>ayurveda kur indien kerala (90)</span>
-            <span>Indien Ayurveda Kerala (70)</span>
-            <span>ayurveda urlaub indien (30)</span>
-            <span>Ayurveda Behandlung Indien</span>
-            <span>authentisches ayurveda</span>
-            <span>Ayurveda Zentrum Indien</span>
-            <span>Ayurveda Therapy</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-de">DE</span>
-          <span class="badge b-qw">⭐ KD 10</span>
-        </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-en">EN</span>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 7</div>
-        <div class="entry-body">
-          <div class="entry-title">Kovalam Beach Indien</div>
-          <div class="entry-url">rockholm.com/de/kovalam-beach-indien/</div>
-          <div class="entry-kw">Focus: <b>kovalam beach indien</b> · 210/mo · KD 10</div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,200+ words</div>
-          <span class="badge b-new">🆕 New Page</span>
-          <span class="badge b-de">DE</span>
-          <span class="badge b-qw">⭐ KD 10</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 8</div>
-        <div class="entry-body">
-          <div class="entry-title">Best Wellness Retreats in India</div>
-          <div class="entry-url">rockholm.com/blogs/best-wellness-retreats-india/</div>
-          <div class="entry-kw">Focus: <b>best wellness retreats in india</b> · 720/mo · KD 30</div>
-          <div class="also">
-            <span>Ayurveda for stress and anxiety</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">2,000+ words</div>
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="badge b-en">EN</span>
-        </div>
-      </div>
-
     </div>
 
-    <div class="also-section">
-      <h4>Also This Month</h4>
-      <div class="also-items">
-        <div class="also-item">
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="ai-url">/rockholm-at-the-lighthouse-beach/</span>
-          <span class="ai-kw"><b>lighthouse beach resort</b> · 2,900/mo · KD 29 · also: Ayurvedic beach resort Kovalam</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="ai-url">/ayurveda-retreat-in-kovalam/</span>
-          <span class="ai-kw"><b>kovalam ayurveda resort</b> · 320/mo · KD 30</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/vata-typ-ayurveda/</span>
-          <span class="ai-kw"><b>vata typ ayurveda</b> · 480/mo · KD 11 · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📖 Blog Rework</span>
-          <span class="ai-url">/blogs/panchakarma.html</span>
-          <span class="ai-kw"><b>What is Panchakarma</b> · 1,300/mo · rewrite as 2,000w informational pillar</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 6</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Indien Kur</div>
+        <div class="entry-url">rockholm.com/de/ayurveda-kur-indien/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda indien kur</b> · 480/mo · KD 10</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-de">DE</span>
+        <span class="badge b-qw">⭐ KD 10</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 7</div>
+      <div class="entry-body">
+        <div class="entry-title">Kovalam Beach Indien</div>
+        <div class="entry-url">rockholm.com/de/kovalam-beach-indien/</div>
+        <div class="entry-kw">Keyword: <b>kovalam beach indien</b> · 210/mo · KD 10</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,200+ words</div>
+        <span class="badge b-new">🆕 New Page</span>
+        <span class="badge b-de">DE</span>
+        <span class="badge b-qw">⭐ KD 10</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 8</div>
+      <div class="entry-body">
+        <div class="entry-title">Best Wellness Retreats in India</div>
+        <div class="entry-url">rockholm.com/blogs/best-wellness-retreats-india/</div>
+        <div class="entry-kw">Keyword: <b>best wellness retreats in india</b> · 720/mo · KD 30</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">2,000+ words</div>
+        <span class="badge b-blog">📝 New Blog</span>
+        <span class="badge b-en">EN</span>
       </div>
     </div>
   </div>
 
-  <!-- ── MONTH 3 ── -->
+  <!-- MONTH 3 -->
   <div class="month-block">
     <div class="month-header">
-      <div>
-        <h3>Month 3 — English Page Reworks</h3>
-        <div class="month-sub">4 existing pages rewritten and re-optimised · EN</div>
-      </div>
-      <div class="month-sub" style="text-align:right">WK 9–12</div>
+      <h3>Month 3 — English Page Reworks</h3>
+      <span class="wk-range">WK 9–12</span>
     </div>
 
-    <div class="entries">
-
-      <div class="entry">
-        <div class="wk">WK 9</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurvedic Massage Packages Kerala</div>
-          <div class="entry-url">rockholm.com/ayurvedic-massage-therapy-packages-kerala/</div>
-          <div class="entry-kw">Focus: <b>Ayurvedic massage in Kerala</b> · 3,600/mo · KD 19</div>
-          <div class="also">
-            <span>ayurvedic massage in trivandrum (880)</span>
-            <span>massage in kovalam kerala (320)</span>
-            <span>ayurvedic massage in kovalam (170)</span>
-            <span>Abhyanga massage Kerala</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 9</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurvedic Massage in Kerala</div>
+        <div class="entry-url">rockholm.com/ayurvedic-massage-therapy-packages-kerala/</div>
+        <div class="entry-kw">Keyword: <b>Ayurvedic massage in Kerala</b> · 3,600/mo · KD 19</div>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 10</div>
-        <div class="entry-body">
-          <div class="entry-title">Lighthouse Beach Resort</div>
-          <div class="entry-url">rockholm.com/rockholm-at-the-lighthouse-beach/</div>
-          <div class="entry-kw">Focus: <b>lighthouse beach resort</b> · 2,900/mo · KD 29</div>
-          <div class="also">
-            <span>Ayurvedic beach resort Kovalam</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-        </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 11</div>
-        <div class="entry-body">
-          <div class="entry-title">Panchakarma Treatment Kovalam</div>
-          <div class="entry-url">rockholm.com/panchakarma-treatment-kovalam/</div>
-          <div class="entry-kw">Focus: <b>Panchakarma Kerala</b> · 720/mo · KD 24</div>
-          <div class="also">
-            <span>Kerala Panchakarma treatment (720)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 12</div>
-        <div class="entry-body">
-          <div class="entry-title">Yoga &amp; Meditation Retreat Kovalam</div>
-          <div class="entry-url">rockholm.com/yoga-meditation-retreat-in-kovalam/</div>
-          <div class="entry-kw">Focus: <b>yoga retreat kerala</b> · 390/mo · KD 26</div>
-          <div class="also">
-            <span>meditation centre in kerala (170)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,300+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-        </div>
-      </div>
-
     </div>
 
-    <div class="also-section">
-      <h4>Also This Month</h4>
-      <div class="also-items">
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/ayurveda-entgiftung/</span>
-          <span class="ai-kw"><b>ayurvedic detoxification</b> · 140/mo · also: ayurveda entgiftung (90) · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📖 Blog Rework</span>
-          <span class="ai-url">/blogs/ayurveda-doshas-role-in-life/</span>
-          <span class="ai-kw"><b>Ayurveda doshas</b> · 1,600/mo · expand to full Vata / Pitta / Kapha hub</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 10</div>
+      <div class="entry-body">
+        <div class="entry-title">Lighthouse Beach Resort</div>
+        <div class="entry-url">rockholm.com/rockholm-at-the-lighthouse-beach/</div>
+        <div class="entry-kw">Keyword: <b>lighthouse beach resort</b> · 2,900/mo · KD 29</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 11</div>
+      <div class="entry-body">
+        <div class="entry-title">Panchakarma Treatment Kerala</div>
+        <div class="entry-url">rockholm.com/panchakarma-treatment-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>Panchakarma Kerala</b> · 720/mo · KD 24</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 12</div>
+      <div class="entry-body">
+        <div class="entry-title">Yoga &amp; Meditation Retreat Kovalam</div>
+        <div class="entry-url">rockholm.com/yoga-meditation-retreat-in-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>yoga retreat kerala</b> · 390/mo · KD 26</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,300+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
       </div>
     </div>
   </div>
 
-  <!-- ── MONTH 4 ── -->
+  <!-- MONTH 4 -->
   <div class="month-block">
     <div class="month-header">
-      <div>
-        <h3>Month 4 — German Page Reworks + Final EN</h3>
-        <div class="month-sub">4 existing pages rewritten · DE + EN</div>
-      </div>
-      <div class="month-sub" style="text-align:right">WK 13–16</div>
+      <h3>Month 4 — German Reworks + Remaining EN</h3>
+      <span class="wk-range">WK 13–16</span>
     </div>
 
-    <div class="entries">
-
-      <div class="entry">
-        <div class="wk">WK 13</div>
-        <div class="entry-body">
-          <div class="entry-title">Panchakarma Behandlung Kovalam</div>
-          <div class="entry-url">rockholm.com/de/panchakarma-behandlung-kovalam/</div>
-          <div class="entry-kw">Focus: <b>panchakarma</b> · 590/mo · KD 17</div>
-          <div class="also">
-            <span>ayurveda panchakarma kur (110)</span>
-            <span>Panchakarma Kur Indien (90)</span>
-            <span>panchakarma indien (20)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,500+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-de">DE</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 13</div>
+      <div class="entry-body">
+        <div class="entry-title">Panchakarma Behandlung Kovalam</div>
+        <div class="entry-url">rockholm.com/de/panchakarma-behandlung-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>panchakarma</b> · 590/mo · KD 17</div>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 14</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Retreat Kovalam</div>
-          <div class="entry-url">rockholm.com/de/ayurveda-retreat-kovalam/</div>
-          <div class="entry-kw">Focus: <b>ayurveda yoga</b> · 320/mo · KD 10</div>
-          <div class="also">
-            <span>ayurveda retreat (320)</span>
-            <span>yoga and ayurveda (320)</span>
-            <span>Yoga Retreat Indien (110)</span>
-            <span>Ayurveda Yoga Retreat (110)</span>
-            <span>ayurveda retreat indien (70)</span>
-            <span>ayurveda wellness urlaub (30)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,300+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-de">DE</span>
-        </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-de">DE</span>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 15</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Retreat in Kovalam</div>
-          <div class="entry-url">rockholm.com/ayurveda-retreat-in-kovalam/</div>
-          <div class="entry-kw">Focus: <b>kovalam ayurveda resort</b> · 320/mo · KD 30</div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,300+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 16</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurveda Packages &amp; Rates</div>
-          <div class="entry-url">rockholm.com/prices/</div>
-          <div class="entry-kw">Focus: <b>ayurveda package rates</b> · 260/mo · KD 10</div>
-          <div class="also">
-            <span>ayurvedic treatment packages in kerala (210)</span>
-            <span>Ayurveda kerala package (140)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">1,000+ words</div>
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="badge b-en">EN</span>
-          <span class="badge b-qw">⭐ KD 10</span>
-        </div>
-      </div>
-
     </div>
 
-    <div class="also-section">
-      <h4>Also This Month</h4>
-      <div class="also-items">
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/ayurveda-anti-aging/</span>
-          <span class="ai-kw"><b>ayurveda anti aging</b> · KD 6 · quickest first-page blog ranking in the plan · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📖 Blog Rework</span>
-          <span class="ai-url">/blogs/how-the-niyamas-in-yoga-guide.html</span>
-          <span class="ai-kw"><b>Niyamas in Yoga</b> · 590/mo · already pos 3.35 (179 clicks) · quarterly refresh only</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 14</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Retreat Kovalam</div>
+        <div class="entry-url">rockholm.com/de/ayurveda-retreat-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda retreat</b> · 320/mo · KD 12</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,300+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-de">DE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 15</div>
+      <div class="entry-body">
+        <div class="entry-title">Kovalam Ayurveda Resort</div>
+        <div class="entry-url">rockholm.com/ayurveda-retreat-in-kovalam/</div>
+        <div class="entry-kw">Keyword: <b>kovalam ayurveda resort</b> · 320/mo · KD 30</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,300+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 16</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Package Rates</div>
+        <div class="entry-url">rockholm.com/prices/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda package rates</b> · 260/mo · KD 10</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,000+ words</div>
+        <span class="badge b-rework">🔄 Rework</span>
+        <span class="badge b-en">EN</span>
+        <span class="badge b-qw">⭐ KD 10</span>
       </div>
     </div>
   </div>
 
-  <!-- ── MONTH 5 ── -->
+  <!-- MONTH 5 -->
   <div class="month-block">
     <div class="month-header">
-      <div>
-        <h3>Month 5 — Audit, Blogs &amp; Phase 2 Prep</h3>
-        <div class="month-sub">Internal linking · Schema check · GSC submission · Phase 2 brief</div>
-      </div>
-      <div class="month-sub" style="text-align:right">WK 17–20</div>
+      <h3>Month 5 — German Blogs + Blog Reworks + Audit</h3>
+      <span class="wk-range">WK 17–20</span>
     </div>
 
-    <div class="entries">
-
-      <div class="entry">
-        <div class="wk">WK 17</div>
-        <div class="entry-body">
-          <div class="entry-title">Ayurvedische Ernährung</div>
-          <div class="entry-url">rockholm.com/de/blogs/ayurvedische-ernaehrung/</div>
-          <div class="entry-kw">Focus: <b>ayurvedische ernährung</b> · 2,400/mo · KD 31</div>
-          <div class="also">
-            <span>Ayurvedische Küche (590)</span>
-            <span>ayurveda ernährungsplan (70)</span>
-          </div>
-        </div>
-        <div class="entry-right">
-          <div class="words">2,000+ words</div>
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="badge b-de">DE</span>
-        </div>
+    <div class="entry">
+      <div class="wk">WK 17</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurvedische Ernährung</div>
+        <div class="entry-url">rockholm.com/de/blogs/ayurvedische-ernaehrung/</div>
+        <div class="entry-kw">Keyword: <b>ayurvedische ernährung</b> · 2,400/mo · KD 31</div>
       </div>
-
-      <div class="entry">
-        <div class="wk">WK 18</div>
-        <div class="entry-body">
-          <div class="entry-title">Internal Link Audit</div>
-          <div class="entry-kw">Connect all new + reworked pages · add 3–5 internal links per page · update anchor text</div>
-        </div>
-        <div class="entry-right">
-          <div class="words">All 16 pages</div>
-          <span class="badge b-rework">⚙️ Audit</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 19</div>
-        <div class="entry-body">
-          <div class="entry-title">FAQ Schema Verification</div>
-          <div class="entry-kw">Verify FAQ schema on every page · fix missing markup · resubmit affected URLs to GSC</div>
-        </div>
-        <div class="entry-right">
-          <div class="words">All 16 pages</div>
-          <span class="badge b-rework">⚙️ Audit</span>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="wk">WK 20</div>
-        <div class="entry-body">
-          <div class="entry-title">Full GSC Submission &amp; Ranking Baseline</div>
-          <div class="entry-kw">Update sitemap · submit all Phase 1 URLs · record ranking positions · prepare Phase 2 brief</div>
-        </div>
-        <div class="entry-right">
-          <div class="words">Phase 2 ready</div>
-          <span class="badge b-pillar">🚀 Phase 2</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="also-section">
-      <h4>Also This Month</h4>
-      <div class="also-items">
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/vata-typ-ayurveda/</span>
-          <span class="ai-kw"><b>vata typ ayurveda</b> · 480/mo · KD 11 · Informational · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-blog">📝 New Blog</span>
-          <span class="ai-url">/de/blogs/ayurveda-entgiftung/</span>
-          <span class="ai-kw"><b>ayurvedic detoxification</b> · 140/mo · also: ayurveda entgiftung (90) · DE</span>
-        </div>
-        <div class="also-item">
-          <span class="badge b-rework">🔄 Rework</span>
-          <span class="ai-url">/ayurveda-cuisine/</span>
-          <span class="ai-kw"><b>Ayurveda cuisine</b> · pos 5.26 · 658 clicks/mo · add seasonal recipes to defend ranking</span>
-        </div>
+      <div class="entry-right">
+        <div class="words">2,000+ words</div>
+        <span class="badge b-blog">📝 New Blog</span>
+        <span class="badge b-de">DE</span>
       </div>
     </div>
+
+    <div class="entry">
+      <div class="wk">WK 17</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Doshas</div>
+        <div class="entry-url">rockholm.com/blogs/ayurveda-doshas-role-in-life/</div>
+        <div class="entry-kw">Keyword: <b>Ayurveda doshas</b> · 1,600/mo · KD 34 · Expand to Vata / Pitta / Kapha hub</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">2,000+ words</div>
+        <span class="badge b-brework">📖 Blog Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 18</div>
+      <div class="entry-body">
+        <div class="entry-title">What is Panchakarma</div>
+        <div class="entry-url">rockholm.com/blogs/panchakarma.html</div>
+        <div class="entry-kw">Keyword: <b>What is Panchakarma</b> · 1,300/mo · KD 33 · Rewrite as 2,000w informational pillar</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">2,000+ words</div>
+        <span class="badge b-brework">📖 Blog Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 18</div>
+      <div class="entry-body">
+        <div class="entry-title">Vata Typ Ayurveda</div>
+        <div class="entry-url">rockholm.com/de/blogs/vata-typ-ayurveda/</div>
+        <div class="entry-kw">Keyword: <b>vata typ ayurveda</b> · 480/mo · KD 11</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,800+ words</div>
+        <span class="badge b-blog">📝 New Blog</span>
+        <span class="badge b-de">DE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 19</div>
+      <div class="entry-body">
+        <div class="entry-title">Meditation Centre in Kerala</div>
+        <div class="entry-url">rockholm.com/blogs/transform-health-meditation-rockholm.html</div>
+        <div class="entry-kw">Keyword: <b>meditation centre in kerala</b> · 170/mo · KD 15 · Fix title + add FAQ schema</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,200+ words</div>
+        <span class="badge b-brework">📖 Blog Rework</span>
+        <span class="badge b-en">EN</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 19</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Entgiftung</div>
+        <div class="entry-url">rockholm.com/de/blogs/ayurveda-entgiftung/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda entgiftung</b> · 90/mo · KD 13</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,500+ words</div>
+        <span class="badge b-blog">📝 New Blog</span>
+        <span class="badge b-de">DE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 19</div>
+      <div class="entry-body">
+        <div class="entry-title">Shirodhara Behandlung</div>
+        <div class="entry-url">rockholm.com/blogs/shirodhara-therapie-ayurveda-kerala.html</div>
+        <div class="entry-kw">Keyword: <b>shirodhara behandlung</b> · 20/mo · KD 10 · Optimise + expand</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,000+ words</div>
+        <span class="badge b-brework">📖 Blog Rework</span>
+        <span class="badge b-de">DE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 20</div>
+      <div class="entry-body">
+        <div class="entry-title">Ayurveda Anti Aging</div>
+        <div class="entry-url">rockholm.com/de/blogs/ayurveda-anti-aging/</div>
+        <div class="entry-kw">Keyword: <b>ayurveda anti aging</b> · 10/mo · KD 6</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">1,200+ words</div>
+        <span class="badge b-blog">📝 New Blog</span>
+        <span class="badge b-de">DE</span>
+        <span class="badge b-qw">⭐ KD 6</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="wk">WK 20</div>
+      <div class="entry-body">
+        <div class="entry-title">Internal Link Audit + FAQ Schema Check</div>
+        <div class="entry-kw">Add 3–5 internal links to every page · verify FAQ schema markup · update sitemap · submit all URLs to GSC</div>
+      </div>
+      <div class="entry-right">
+        <div class="words">All pages</div>
+        <span class="badge b-audit">⚙️ Audit</span>
+      </div>
+    </div>
+
   </div>
 
-  <hr class="divider">
+  <hr>
 
-  <!-- ═══════ DEFEND ═══════ -->
-  <div class="section-title">Pages Already Ranking — Defend Only</div>
-  <div class="section-sub">These pages hold strong positions. Do not restructure — quarterly refresh only.</div>
+  <!-- DEFEND -->
+  <div class="section-title">Already Ranking — Defend Only</div>
+  <div class="section-sub">Strong positions. Quarterly refresh only — do not restructure.</div>
   <div class="defend-grid">
     <div class="defend-card">
-      <div class="defend-check">✅</div>
+      <div class="defend-icon">✅</div>
       <div>
         <div class="dc-url">/blogs/how-the-niyamas-in-yoga-guide.html</div>
         <div class="dc-kw">Niyamas in Yoga</div>
-        <div class="dc-pos">Position 3.35 &nbsp;·&nbsp; 179 clicks/mo &nbsp;·&nbsp; 590 vol</div>
+        <div class="dc-meta">Position 3.35 · 179 clicks/mo · 590 vol/mo</div>
       </div>
     </div>
     <div class="defend-card">
-      <div class="defend-check">✅</div>
+      <div class="defend-icon">✅</div>
       <div>
         <div class="dc-url">/ayurveda-cuisine/</div>
         <div class="dc-kw">Ayurveda Cuisine</div>
-        <div class="dc-pos">Position 5.26 &nbsp;·&nbsp; 658 clicks/mo &nbsp;·&nbsp; 10 vol</div>
+        <div class="dc-meta">Position 5.26 · 658 clicks/mo · 10 vol/mo</div>
       </div>
     </div>
   </div>
 
-</div><!-- /page -->
+</div>
 
 <div class="footer">
   <b>Gilead Digital</b> &nbsp;·&nbsp; SEO Content Plan for Rockholm, Kovalam &nbsp;·&nbsp; Phase 1 of 2 &nbsp;·&nbsp; June 2026
